@@ -1,0 +1,41 @@
+@import "global";
+@import "materialize";
+
+
+
+footer{
+    nav{
+        padding: 8px;
+    }
+    
+    ul{
+        li{
+            line-height: 50px;
+        }
+    }
+}
+header{
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+img{
+    width: 100%;
+}
+
+.content-white{
+    background-color: #FFF;
+    padding: 15px;
+}
+
+.wrapper{
+    height: 100%;
+}
+.parallax-container{
+    height: 100%;
+}
+
+.semi-transparent-nav{
+    background-color: rgba(3,3,3,0.4);
+}
