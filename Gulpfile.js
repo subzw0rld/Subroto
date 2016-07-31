@@ -1,7 +1,23 @@
 var gulp=require("gulp"),
     connect=require("gulp-connect"),
     sass=require("gulp-sass"),
-    open=require("gulp-open");
+    open=require("gulp-open"),
+    handlebars = require('handlebars'),
+    gulpHandlebars = require('gulp-compile-handlebars')(handlebars),
+    rename = require('gulp-rename');
+
+
+gulp.task('handlebars', function () {
+    var templateData = 'modules/**/data/*.json',
+    options = {
+        partialsDirectory : ['modules/partials/**']
+    }
+
+    return gulp.src('modules/**/*.hbs')
+        .pipe(rename('**/*.html'))
+        .pipe(gulp.dest('dist'));
+});
+
 
 gulp.task("server",function(){
    connect.server({
@@ -24,7 +40,7 @@ gulp.task("sass",function(){
 });
 
 gulp.task("watch",function(){
-    gulp.watch(['index.html',"scss/main.scss"],['sass','html']);
+    gulp.watch(['*.html',"scss/main.scss"],['sass','html']);
 });
 
 gulp.task("default",["server","watch", "open"]);

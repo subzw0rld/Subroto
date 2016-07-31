@@ -1,8 +1,7 @@
 html,
 body {
   padding: 0;
-  margin: 0;
-  height: 100%; }
+  margin: 0; }
 
 body {
   font-size: 62.5%; }
@@ -6231,15 +6230,50 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .picker--time .picker__box {
     margin-bottom: 5em; } }
 
-footer nav {
-  padding: 8px; }
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://fonts.gstatic.com/s/materialicons/v17/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format("woff2"); }
 
-footer ul li {
-  line-height: 50px; }
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased; }
+
+footer {
+  background: #424242;
+  min-height: 70px;
+  padding: 20px; }
+  footer div.container {
+    text-align: center; }
+  footer nav {
+    padding: 8px; }
+  footer ul li {
+    line-height: 50px; }
+
+footer.row {
+  margin-bottom: 0; }
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #424242;
+  box-shadow: 0 1px 0 0 #424242; }
 
 header {
   position: absolute;
   width: 100%;
+  top: 0;
   z-index: 1000; }
 
 img {
@@ -6257,3 +6291,47 @@ img {
 
 .semi-transparent-nav {
   background-color: rgba(3, 3, 3, 0.4); }
+
+nav.semi-transparent-nav {
+  min-height: 66px; }
+  nav.semi-transparent-nav li.active {
+    background: #424242; }
+
+.explore-form {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 50px !important; }
+  .explore-form .explorer-title {
+    position: absolute;
+    left: 50%;
+    top: -80px;
+    margin-left: -125px;
+    width: 250px;
+    height: auto;
+    color: #3e2723;
+    background: #FFF;
+    border-radius: 2% 2% 0 0;
+    text-align: center; }
+
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #424242; }
+
+.explorer {
+  font-size: 15px; }
+
+.search-result {
+  border-top: 1px solid #d0d0d0;
+  padding-top: 20px;
+  padding-bottom: 50px !important; }
+
+.social {
+  color: #FFF;
+  font-size: 15px;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-right: 5px; }
+  .social i {
+    padding-top: 6px; }
