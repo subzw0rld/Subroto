@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trekoholic | Explorer</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Trekoholic">
+    <meta name="description" content="Website for Trekoholic">
+
+    <!-- Mobile Stuff -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="shortcut icon" type="image/png" href="images/logo3.png">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header>
+        <nav class="semi-transparent-nav">
+            <ul>
+                <li class="active">
+                    <a href="#">Explorer</a>
+                </li>
+                <li>
+                    <a href="#">Gallery</a>
+                </li>
+                <li>
+                    <a href="#">TrekTalk</a>
+                </li>
+                <li>
+                    <a href="#">Attractions</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="row wrapper explorer">
+        <img class="explorer-banner" src="images/explorer-crop.jpg">
+        <form action="search" class="explore-form row" onsubmit="return validation()">
+            <h1 class="explorer-title">Explore</h1>
+            <div class="input-field col s4 m4">
+                <select class="selectpicker form-focus" name="regions" id="regions" onchange="change_treks()">
+                    <option value="*">Zone</option>
+                    <option value="2" id="North" onclick="waitingDialog.show('Custom message', {dialogSize: 'sm', progressType: 'warning'});setTimeout(function () {waitingDialog.hide();}, 2000);">North</option>
+                    <option value="3" id="South" onclick="waitingDialog.show('Custom message', {dialogSize: 'sm', progressType: 'warning'});setTimeout(function () {waitingDialog.hide();}, 2000);">South</option>
+                    <option value="4" id="East" onclick="waitingDialog.show('Custom message', {dialogSize: 'sm', progressType: 'warning'});setTimeout(function () {waitingDialog.hide();}, 2000);">East</option>
+                    <option value="5" id="West" onclick="waitingDialog.show('Custom message', {dialogSize: 'sm', progressType: 'warning'});setTimeout(function () {waitingDialog.hide();}, 2000);">West</option>
+                </select>
+            </div>
+
+            <div class="input-field col s4 m4">
+                <select class="selectpicker" id="defficulty" name="defficulty" onchange="change_treks()" data-style="btn-inverse">
+                    <option value="*">Difficulty</option>
+                    <option value="1">Simple</option>
+                    <option value="2">Moderate</option>
+                    <option value="3">Hard</option>
+                </select>
+            </div>
+
+            <div class="input-field col s4 m4">
+                <select class="selectpicker" id="treks_dropdown" name="treks_dropdown" data-style="btn-inverse">
+                    <option value="*">Trek</option>
+                    <option value="66">Khauli Pass Trek</option>
+                    <option value="67">Rupin Pass Trek</option>
+                    <option value="68">Beas Kund Trek</option>
+                    <option value="69">Har Ki Dun Trek</option>
+                    <option value="70">Kuari Pass Trek</option>
+                    <option value="71">Nag Tibba Trek</option>
+                    <option value="72">Tirthan Valley Trek</option>
+                    <option value="73">Deo Tibba Base Camp Trek</option>
+                    <option value="74">Chandrakhani Pass Trek</option>
+                    <option value="75">Valley of Flowers Trek</option>
+                    <option value="76">Kareri Lake Trek</option>
+                    <option value="77">Indrahar Pass Trek</option>
+                    <option value="78">Deoriatal Chandrashila Trek</option>
+                    <option value="79">Mayali Pass Trek (5300M)</option>
+                    <option value="80">Baraadsar Lake Trek</option>
+                    <option value="81">Milam Glacier &amp; Nanda Devi Base Camp Trek</option>
+                    <option value="82">Pindari Glacier Trek</option>
+                    <option value="83">Panwali Kantha Trek</option>
+                    <option value="84">Kalindi khal Trek</option>
+                    <option value="85">Bara Bhangal Trek</option>
+                    <option value="86">Dodital Darwa Pass Trek</option>
+                    <option value="87">Darcha Lamayuru Trek</option>
+                    <option value="88">Lamayuru Alchi Trek</option>
+                    <option value="89">Kedar Taal Trek</option>
+                    <option value="90">Satopanth Lake Trek</option>
+                    <option value="91">Auden's Col Expedition</option>
+                    <option value="92">Snow Leopard Trek</option>
+                    <option value="93">Nubra Valley Trek</option>
+                    <option value="94">Jiwa Nallah to Parwati river valley trek</option>
+                    <option value="95">Kinner Kailash Trek</option>
+                    <option value="96">Ruinsara Taal Bali Pass Trek</option>
+                    <option value="97">Sham Valley Trek</option>
+                    <option value="98">Zanskar Lamayuru Trek</option>
+                    <option value="99">Roopkund Homkund Ronti Saddle Trek</option>
+                    <option value="100">Ruinsara Tal Trek</option>
+                    <option value="101">Mantalai Lake Trek</option>
+                    <option value="102">Dayara Bugyal Trek</option>
+                    <option value="103">Stok Kangri Trek</option>
+                    <option value="104">Chadar Trek</option>
+                    <option value="105">Vasuki Taal &amp; Meru Glacier Trek</option>
+                    <option value="106">GOECHA LA TREK</option>
+                    <option value="107">Hampta Pass Trek</option>
+                    <option value="108">Kashmir Great Lakes Trek</option>
+                    <option value="109">Markha Valley Trek</option>
+                    <option value="110">Pin Parwati Pass Trek</option>
+                    <option value="111">Roopkund Trek</option>
+                    <option value="112">Spituk Trek</option>
+                </select>
+            </div>
+
+            <div class="input-field col s12 m12">
+                <input type="text" placeholder="What's Next ?" name="search" id="search" class="col s10 m10">
+                <div class="col s2 m2">
+                    <a href="javascript:void(0);" class="waves-effect waves-light btn grey darken-3"><i class="material-icons left">search</i> Search</a>
+                </div>
+
+            </div>
+
+        </form>
+        <div class="search-result row">
+            <table class="striped responsive-table centered bordered">
+                <thead>
+                    <tr>
+                        <th>Vendor</th>
+                        <th>Rating</th>
+                        <th>Destinations</th>
+                        <th>Price</th>
+                        <th>Offers</th>
+                        <th>Book</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">Bikat Adventures</a><div>Reviews:2</div></td>
+                        <td>***</td>
+                        <td><a href="#">Khauli Pass Trek</a></td>
+                        <td>Rs. 6200</td>
+                        <td>No Offers yet</td>
+                        <td><a href="#" class="btn grey darken-3">Book Now</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">ABC Adventures</a><div>Reviews:2</div></td>
+                        <td>***</td>
+                        <td><a href="#">Khauli Pass Trek</a></td>
+                        <td>Rs. 6200</td>
+                        <td>No Offers yet</td>
+                        <td><a href="#" class="btn grey darken-3">Book Now</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <footer class="row">
+        <div class="container">
+            <a href="https://www.facebook.com/" class="social">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://www.facebook.com/" class="social">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/" class="social">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/" class="social">
+                <i class="fa fa-youtube-play"></i>
+            </a>
+        </div>
+    </footer>
+    <script type="application/javascript" src="js/vendor/jquery.js"></script>
+    <script type="application/javascript" src="js/vendor/materialize.js"></script>
+    <script type="application/javascript" src="js/main.js"></script>
+</body>
+
+</html>
