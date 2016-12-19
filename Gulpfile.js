@@ -40,7 +40,7 @@ gulp.task("sass",function(){
 });
 
 gulp.task("watch",function(){
-    gulp.watch(['*.html',"scss/*.scss"],['sass','html']);
+    gulp.watch(['*.html',"scss/**/*.scss"],['sass','html']);
 });
 
 gulp.task("default",["server","watch", "open"]);

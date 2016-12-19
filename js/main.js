@@ -1,7 +1,7 @@
 //$(".parallax").parallax();
 $('select').material_select();
 
-var currentModule = document.querySelector(".wrapper").className.split(" ")[2];
+//var currentModule = document.querySelector(".wrapper").className.split(" ")[2];
 var windowHeight = window.innerHeight;
 var headerHeight = $(".semi-transparent-nav").outerHeight();
 var footerHeight = $("footer").outerHeight();
@@ -14,7 +14,32 @@ var destinationCollection = ["Arunachal Pradesh", "Spiti", "Leh", "Meghalaya", "
 
 var page = document.location.href;
 
-if (currentModule === "gallery") {
+var initScroll=function($iElement){
+    var offsetY=$("header").height();
+    var elementYPos=$iElement.position().top;
+    $(window).on("scroll", function(event){
+        var windowYPos=$(this).scrollTop();
+        
+        elementYPos=offsetY-windowYPos;
+        
+        if(elementYPos<=0){
+            elementYPos=0;
+        }
+        
+//        if(windowYPos>=offsetY){
+//            elementYPos=0;
+//        }else{
+//            elementYPos=offsetY
+//        }
+        
+        $iElement.css({
+            "top": elementYPos 
+        });
+    });
+}
+
+
+if (page.indexOf("gallery")!== -1) {
     $('.fancybox').fancybox({
         "transitionIn": "elastic",
         "transitionOut": "elastic",
@@ -22,6 +47,9 @@ if (currentModule === "gallery") {
         "easingOut": "easeInBack",
         "scrolling": "no"
     });
+    
+    $('.scrollspy').scrollSpy();
+    initScroll($('.scrollspy-menu'));
 }
 
 

@@ -6203,6 +6203,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .picker--time .picker__box {
     margin-bottom: 5em; } }
 
+/**** Scrollspy Variables ****/
 html,
 body {
   padding: 0;
@@ -6254,6 +6255,11 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
   font-size: 15px;
   font-size: 1.5rem; }
 
+a {
+  color: #333; }
+  a:hover, a:focus {
+    color: #fa9000; }
+
 h1 {
   font-size: 52px;
   color: #3e2723; }
@@ -6295,7 +6301,7 @@ header .semi-transparent-nav {
 header nav.semi-transparent-nav {
   min-height: 66px;
   min-height: 6.6rem; }
-  header nav.semi-transparent-nav li.active {
+  header nav.semi-transparent-nav .active {
     background: #424242; }
 
 header nav ul a {
@@ -6330,50 +6336,55 @@ header nav ul a {
     padding-bottom: 50px !important; }
 
 .gallery {
-  margin-top: 64px;
-  margin-top: 6.4rem;
+  margin-top: 124px;
+  margin-top: 12.4rem;
+  font-size: 15px;
+  font-size: 1.5rem;
+  overflow-y: auto; }
+  .gallery .galleryContainer li {
+    float: left;
+    width: 33%;
+    margin-left: 3px;
+    margin-left: 0.3rem;
+    margin-top: 10px;
+    margin-top: 1rem; }
+    .gallery .galleryContainer li:nth-child(3n-1) img {
+      margin-top: 5px;
+      margin-top: 0.5rem; }
+
+.gallery, .article, .videos, .know-how {
   margin-right: 20px;
   margin-right: 2rem;
   margin-left: 20px;
   margin-left: 2rem;
-  margin-bottom: 0;
-  min-height: 600px;
-  font-size: 15px;
-  font-size: 1.5rem;
-  overflow-y: auto; }
-  .gallery .galleryContainer {
-    width: 90%;
-    margin: 0 auto; }
-    .gallery .galleryContainer li {
-      float: left;
-      width: 33%;
-      margin-left: 3px;
-      margin-left: 0.3rem;
-      margin-top: 10px;
-      margin-top: 1rem; }
-      .gallery .galleryContainer li:nth-child(3n-1) img {
-        margin-top: 5px;
-        margin-top: 0.5rem; }
-  .gallery .galleryContainer {
-    width: 85%;
-    margin: 0 auto; }
-  .gallery .imgContainer {
+  margin-bottom: 0; }
+  .gallery h1, .article h1, .videos h1, .know-how h1 {
+    padding: 10px;
+    padding: 1rem;
+    font-size: 35px;
+    font-size: 3.5rem;
+    background: #333;
+    color: #FFF; }
+  .gallery .icon, .article .icon, .videos .icon, .know-how .icon {
+    font-size: 15px;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    margin: 0 1rem;
+    vertical-align: middle; }
+  .gallery .imgContainer, .article .imgContainer, .videos .imgContainer, .know-how .imgContainer {
     position: relative;
-    width: 100%;
-    max-height: 300px; }
-  .gallery .imgContainerItem {
-    position: static;
-    width: 100%;
-    height: 0;
-    padding-bottom: 110%; }
-  .gallery .imgContainerLink {
+    height: 300px;
+    overflow: hidden; }
+  .gallery .imgContainerLink, .article .imgContainerLink, .videos .imgContainerLink, .know-how .imgContainerLink {
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
     border-radius: 8px; }
-    .gallery .imgContainerLink::before {
+    .gallery .imgContainerLink::before, .article .imgContainerLink::before, .videos .imgContainerLink::before, .know-how .imgContainerLink::before {
       content: '';
       position: absolute;
       bottom: 0;
@@ -6384,33 +6395,26 @@ header nav ul a {
       background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.86) 100%);
       background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.86) 100%);
       background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.86) 100%); }
-    .gallery .imgContainerLink:hover img {
+    .gallery .imgContainerLink img, .article .imgContainerLink img, .videos .imgContainerLink img, .know-how .imgContainerLink img {
+      -webkit-transition: transform 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      -moz-transition: transform 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      -ms-transition: transform 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      -o-transition: transform 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      transition: transform 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%; }
+    .gallery .imgContainerLink:hover img, .article .imgContainerLink:hover img, .videos .imgContainerLink:hover img, .know-how .imgContainerLink:hover img {
       -webkit-transform: translate3d(-50%, -50%, 0) scale3d(1.5, 1.5, 1.5);
       -moz-transform: translate3d(-50%, -50%, 0) scale3d(1.5, 1.5, 1.5);
       -ms-transform: translate3d(-50%, -50%, 0) scale3d(1.5, 1.5, 1.5);
       -o-transform: translate3d(-50%, -50%, 0) scale3d(1.5, 1.5, 1.5);
       transform: translate3d(-50%, -50%, 0) scale3d(1.5, 1.5, 1.5); }
-  .gallery .imgContainerImageWrapper {
-    position: absolute;
-    display: block;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%; }
-    .gallery .imgContainerImageWrapper img {
-      width: auto;
-      height: 101%;
-      -webkit-transition: all 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      -moz-transition: all 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      -ms-transition: all 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      -o-transition: all 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      transition: all 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      -webkit-transform: translate3d(-50%, -50%, 0);
-      -moz-transform: translate3d(-50%, -50%, 0);
-      -ms-transform: translate3d(-50%, -50%, 0);
-      -o-transform: translate3d(-50%, -50%, 0);
-      transform: translate3d(-50%, -50%, 0); }
-  .gallery .details {
+  .gallery .details, .article .details, .videos .details, .know-how .details {
     position: absolute;
     width: 100%;
     height: 40px;
@@ -6421,96 +6425,71 @@ header nav ul a {
     padding-top: 10px;
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.15); }
-  .gallery .info {
+  .gallery .info, .article .info, .videos .info, .know-how .info {
     color: #FFF;
     display: block; }
-  .gallery .pillar {
-    width: 20px;
-    background: #424242;
-    height: 100%;
-    margin: 0 auto; }
-  .gallery .card {
-    color: #424242;
-    display: block;
-    border: 1px solid #424242;
-    background: #FFF;
-    width: 200px;
-    width: 20rem;
-    height: 50px;
-    text-align: center;
-    padding-top: 15px;
-    padding-top: 1.5rem;
-    position: absolute; }
-  .gallery .odd {
-    left: 54%; }
-    .gallery .odd::before {
-      border: 1px solid #424242;
-      content: " ";
-      left: -25%;
-      top: 23px;
-      position: absolute;
-      height: 2px;
-      width: 25%; }
-  .gallery .even {
-    left: 32%; }
-    .gallery .even::after {
-      border: 1px solid #424242;
-      content: " ";
-      left: 100%;
-      top: 23px;
-      position: absolute;
-      height: 2px;
-      width: 25%; }
-  .gallery .modal.bottom-sheet {
-    max-height: 100%;
-    height: 100%; }
-  .gallery .modal-content {
-    display: inline-block;
-    padding-top: 0; }
-  .gallery .modal-title-container {
-    border-bottom: 1px solid #424242;
-    padding: 10px;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    left: 0;
-    height: 50px;
-    background: #FAFAFA; }
-    .gallery .modal-title-container .modal-title {
-      float: left; }
-    .gallery .modal-title-container .close-modal {
-      float: right;
-      margin-right: 10px; }
-      .gallery .modal-title-container .close-modal i {
-        font-size: 30px;
-        font-size: 3rem;
-        color: #424242; }
-  .gallery .modal-footer {
-    border-top: 1px solid #424242; }
-  .gallery .image-gallery {
-    margin-top: 70px; }
-    .gallery .image-gallery .cell {
-      display: block;
-      width: 50%;
-      float: left; }
-      .gallery .image-gallery .cell img {
-        width: 100%; }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%; }
-  footer .social {
-    color: #FFF;
-    font-size: 15px;
-    border-radius: 50%;
-    border: 2px solid #FFF;
-    width: 30px;
-    height: 30px;
+.galleryContainer, .article-container, .videos, .know-how {
+  width: 85%;
+  margin: 0 auto; }
+
+.article .odd, .videos .odd, .know-how .odd {
+  float: left; }
+
+.article .even, .videos .even, .know-how .even {
+  float: right; }
+
+.article .card-panel, .videos .card-panel, .know-how .card-panel {
+  padding-top: 20px;
+  padding-top: 2rem;
+  width: 48%;
+  box-sizing: border-box;
+  vertical-align: top; }
+
+.article .article-title a, .article .article-title span, .videos .article-title a, .videos .article-title span, .know-how .article-title a, .know-how .article-title span {
+  display: block; }
+
+.article .article-title span, .videos .article-title span, .know-how .article-title span {
+  font-size: 10px;
+  font-size: 1rem; }
+
+.article .article-listing, .videos .article-listing, .know-how .article-listing {
+  margin-top: 15px;
+  margin-top: 1.5rem; }
+  .article .article-listing li, .videos .article-listing li, .know-how .article-listing li {
+    margin-bottom: 5px;
+    margin-bottom: 0.5rem; }
+  .article .article-listing .article-link, .videos .article-listing .article-link, .know-how .article-listing .article-link {
+    display: block; }
+    .article .article-listing .article-link .article-thumb, .videos .article-listing .article-link .article-thumb, .know-how .article-listing .article-link .article-thumb {
+      margin-right: 10px;
+      margin-right: 1rem;
+      border-radius: 4px;
+      display: inline-block;
+      height: 70px;
+      width: 70px;
+      overflow: hidden;
+      vertical-align: middle; }
+    .article .article-listing .article-link img, .videos .article-listing .article-link img, .know-how .article-listing .article-link img {
+      height: 100%;
+      width: auto; }
+  .article .article-listing .article-list-title, .videos .article-listing .article-list-title, .know-how .article-listing .article-list-title {
     display: inline-block;
-    margin-right: 5px; }
-    footer .social i {
-      padding-top: 6px; }
+    vertical-align: middle; }
+  .article .article-listing .article-time, .videos .article-listing .article-time, .know-how .article-listing .article-time {
+    display: block; }
+
+footer .social {
+  color: #FFF;
+  font-size: 15px;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-right: 5px; }
+  footer .social i {
+    padding-top: 6px; }
 
 .dropdown-content li > a, .dropdown-content li > span {
   color: #424242; }
@@ -6518,6 +6497,63 @@ footer {
 .select-wrapper input.select-dropdown {
   font-size: 15px;
   font-size: 1.5rem; }
+
+.scrollspy-menu {
+  font-size: 15px;
+  font-size: 1.5rem;
+  padding: 0 10px;
+  padding: 0 1rem;
+  -webkit-box-shadow: 0 8px 8px 0 rgba(50, 50, 50, 0.45);
+  -moz-box-shadow: 0 8px 8px 0 rgba(50, 50, 50, 0.45);
+  box-shadow: 0 8px 8px 0 rgba(50, 50, 50, 0.45);
+  -webkit-transition: top 0.1s cubic-bezier(0.53, 0.06, 0.42, 0.85);
+  -moz-transition: top 0.1s cubic-bezier(0.53, 0.06, 0.42, 0.85);
+  -ms-transition: top 0.1s cubic-bezier(0.53, 0.06, 0.42, 0.85);
+  -o-transition: top 0.1s cubic-bezier(0.53, 0.06, 0.42, 0.85);
+  transition: top 0.1s cubic-bezier(0.53, 0.06, 0.42, 0.85);
+  background: rgba(3, 3, 3, 0.95);
+  box-sizing: border-box;
+  color: #FFF;
+  height: 50px;
+  margin: 0;
+  position: fixed;
+  top: 66px;
+  width: 100%;
+  z-index: 20; }
+  .scrollspy-menu li {
+    text-align: center;
+    height: 100%; }
+  .scrollspy-menu a {
+    padding: 15px;
+    padding: 1.5rem;
+    display: block;
+    color: inherit;
+    height: 100%;
+    position: relative; }
+    .scrollspy-menu a::after {
+      -webkit-transition: transform 0.8s cubic-bezier(0.53, 0.06, 0.42, 0.85);
+      -moz-transition: transform 0.8s cubic-bezier(0.53, 0.06, 0.42, 0.85);
+      -ms-transition: transform 0.8s cubic-bezier(0.53, 0.06, 0.42, 0.85);
+      -o-transition: transform 0.8s cubic-bezier(0.53, 0.06, 0.42, 0.85);
+      transition: transform 0.8s cubic-bezier(0.53, 0.06, 0.42, 0.85);
+      -webkit-transform: scaleX(0);
+      -moz-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+      -o-transform: scaleX(0);
+      transform: scaleX(0);
+      display: block;
+      content: "";
+      border-bottom: 4px solid #FFF;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      left: 0; }
+  .scrollspy-menu a.active::after {
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1); }
 
 .content-white {
   background-color: #FFF;

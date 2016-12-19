@@ -1,0 +1,49 @@
+.scrollspy-menu{
+    @include rem(font-size, $scrollspy-menu-item-font-size);
+    @include rem(padding, 0 10px);
+    @include box_shadow(0 8px 8px 0 $scrollspy-shadow-color);
+    @include vendor_transition(top 0.1s cubic-bezier(0.53, 0.06, 0.42, 0.85));
+    
+    background: $scrollspy-background;
+    box-sizing: border-box;
+    color: $scrollspy-menu-item-color;
+    height: 50px;
+    margin: 0;
+    position: fixed;
+    top: 66px;
+    width: 100%;
+    z-index: 20;
+    
+    li{
+        text-align: center;
+        height: 100%;
+    }
+    
+    a{
+        @include rem(padding, 15px);
+        
+        display: block;
+        color: inherit;
+        height: 100%;
+        position: relative;
+        
+        &::after{
+            @include vendor_transition(transform 0.8s cubic-bezier(0.53, 0.06, 0.42, 0.85));
+            @include vendor_transform(scaleX(0));
+            
+            display: block;
+            content: "";
+            border-bottom: 4px solid $scrollspy-active-border-color;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+        }
+    }
+    
+    a.active{
+        &::after{
+            @include vendor_transform(scaleX(1));
+        }
+    }
+}

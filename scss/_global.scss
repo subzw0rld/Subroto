@@ -65,6 +65,14 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     @include rem(font-size,15px);
 }
 
+a{
+    color: $default-anchor-color;
+    
+    &:hover, &:focus{
+        color: $anchor-hover-color;
+    }
+}
+
 h1{
     font-size: $h1-font-size;
     color:$h1-default-color;

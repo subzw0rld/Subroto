@@ -5,7 +5,7 @@ header{
 
     nav.semi-transparent-nav{
         @include rem(min-height, 66px);
-        li.active{
+        .active{
             background: $dark-grey;
         }
     }
