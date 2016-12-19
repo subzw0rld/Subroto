@@ -2,10 +2,10 @@ html,
 body {
     padding: 0;
     margin: 0;
-    height: 100%;
+//    height: 100%;
 }
 
-body {
+html {
     font-size: 62.5%;
 }
 
@@ -35,3 +35,49 @@ body {
 
 
 /* close commented backslash hack */
+
+footer {
+    background: $dark-grey;
+    @include rem(min-height,70px);
+    @include rem(padding, 20px);
+
+    div.container{
+        text-align: center;
+    }
+
+    nav {
+        @include rem(padding, 8px);
+    }
+    ul {
+        li {
+            @include rem(line-height, 50px);
+        }
+    }
+}
+
+footer.row{
+    margin-bottom: 0;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+    border-bottom:1px solid $dark-grey;
+    box-shadow: 0 1px 0 0 $dark-grey;
+    @include rem(font-size,15px);
+}
+
+h1{
+    font-size: $h1-font-size;
+    color:$h1-default-color;
+}
+
+
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+img {
+    width: 100%;
+}

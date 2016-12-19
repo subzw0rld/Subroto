@@ -1,0 +1,27 @@
+.explorer{
+    @include rem(font-size,15px);
+    
+    .explore-form {
+        position: relative;
+        @include rem(padding-top,20px);
+//        padding-bottom: 50px !important;
+        @include rem(padding-bottom,50px);
+        .explorer-title {
+            position: absolute;
+            left: 50%;
+            @include rem(top,-80px);
+            @include rem(margin-left,-125px);
+            @include rem(width, 250px);
+            height: auto;
+            background: $white;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+    }
+    
+    .search-result{
+        border-top: 1px solid #d0d0d0;
+        padding-top: 20px;
+        padding-bottom: 50px !important;
+    }
+}
