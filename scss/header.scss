@@ -1,0 +1,20 @@
+header{
+    .semi-transparent-nav {
+        background-color: $semi-transparent-nav-bg;
+    }
+
+    nav.semi-transparent-nav{
+        @include rem(min-height, 66px);
+        li.active{
+            background: $dark-grey;
+        }
+    }
+    
+    nav{
+        ul{
+            a{
+                @include rem(font-size,15px); 
+            }
+        }
+    }
+}

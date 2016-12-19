@@ -1,0 +1,16 @@
+//Adds vendor prefix to different effects like transition, shadow etc
+@mixin vendor_transition($args){
+    -webkit-transition:$args;
+    -moz-transition:$args;
+    -ms-transition:$args;
+    -o-transition:$args;
+    transition:$args;
+}
+
+@mixin vendor_transform($args){
+    -webkit-transform:$args;
+    -moz-transform:$args;
+    -ms-transform:$args;
+    -o-transform:$args;
+    transform:$args;
+}

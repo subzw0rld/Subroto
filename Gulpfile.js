@@ -27,7 +27,7 @@ gulp.task("server",function(){
 });
 
 gulp.task("open",function(){
-    gulp.src(__filename).pipe(open({uri:"http://localhost:8888/"}));
+    gulp.src(__filename).pipe(open({uri:"http://localhost:8888/gallery.html"}));
 });
 
 gulp.task("html",function(){
@@ -40,7 +40,7 @@ gulp.task("sass",function(){
 });
 
 gulp.task("watch",function(){
-    gulp.watch(['*.html',"scss/main.scss"],['sass','html']);
+    gulp.watch(['*.html',"scss/*.scss"],['sass','html']);
 });
 
 gulp.task("default",["server","watch", "open"]);

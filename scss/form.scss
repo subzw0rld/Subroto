@@ -1,0 +1,7 @@
+.dropdown-content li > a, .dropdown-content li > span{
+    color: $form-dropdown-color;
+}
+
+.select-wrapper input.select-dropdown{
+    @include rem(font-size,15px);
+}
