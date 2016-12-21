@@ -478,85 +478,85 @@
 .indigo-text.text-accent-4 {
   color: #304ffe !important; }
 
-.blue {
+.blue, .profile .badge-footer {
   background-color: #2196F3 !important; }
 
 .blue-text {
   color: #2196F3 !important; }
 
-.blue.lighten-5 {
+.blue.lighten-5, .profile .lighten-5.badge-footer {
   background-color: #E3F2FD !important; }
 
 .blue-text.text-lighten-5 {
   color: #E3F2FD !important; }
 
-.blue.lighten-4 {
+.blue.lighten-4, .profile .lighten-4.badge-footer {
   background-color: #BBDEFB !important; }
 
 .blue-text.text-lighten-4 {
   color: #BBDEFB !important; }
 
-.blue.lighten-3 {
+.blue.lighten-3, .profile .lighten-3.badge-footer {
   background-color: #90CAF9 !important; }
 
 .blue-text.text-lighten-3 {
   color: #90CAF9 !important; }
 
-.blue.lighten-2 {
+.blue.lighten-2, .profile .lighten-2.badge-footer {
   background-color: #64B5F6 !important; }
 
 .blue-text.text-lighten-2 {
   color: #64B5F6 !important; }
 
-.blue.lighten-1 {
+.blue.lighten-1, .profile .lighten-1.badge-footer {
   background-color: #42A5F5 !important; }
 
 .blue-text.text-lighten-1 {
   color: #42A5F5 !important; }
 
-.blue.darken-1 {
+.blue.darken-1, .profile .darken-1.badge-footer {
   background-color: #1E88E5 !important; }
 
 .blue-text.text-darken-1 {
   color: #1E88E5 !important; }
 
-.blue.darken-2 {
+.blue.darken-2, .profile .darken-2.badge-footer {
   background-color: #1976D2 !important; }
 
 .blue-text.text-darken-2 {
   color: #1976D2 !important; }
 
-.blue.darken-3 {
+.blue.darken-3, .profile .darken-3.badge-footer {
   background-color: #1565C0 !important; }
 
 .blue-text.text-darken-3 {
   color: #1565C0 !important; }
 
-.blue.darken-4 {
+.blue.darken-4, .profile .darken-4.badge-footer {
   background-color: #0D47A1 !important; }
 
 .blue-text.text-darken-4 {
   color: #0D47A1 !important; }
 
-.blue.accent-1 {
+.blue.accent-1, .profile .accent-1.badge-footer {
   background-color: #82B1FF !important; }
 
 .blue-text.text-accent-1 {
   color: #82B1FF !important; }
 
-.blue.accent-2 {
+.blue.accent-2, .profile .accent-2.badge-footer {
   background-color: #448AFF !important; }
 
 .blue-text.text-accent-2 {
   color: #448AFF !important; }
 
-.blue.accent-3 {
+.blue.accent-3, .profile .accent-3.badge-footer {
   background-color: #2979FF !important; }
 
 .blue-text.text-accent-3 {
   color: #2979FF !important; }
 
-.blue.accent-4 {
+.blue.accent-4, .profile .accent-4.badge-footer {
   background-color: #2962FF !important; }
 
 .blue-text.text-accent-4 {
@@ -6264,6 +6264,18 @@ h1 {
   font-size: 52px;
   color: #3e2723; }
 
+h3 {
+  font-size: 24px;
+  color: h3-default-color; }
+
+h4 {
+  font-family: inherit;
+  font-size: 18px;
+  color: #333; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto'; }
+
 header {
   position: absolute;
   width: 100%;
@@ -6479,6 +6491,105 @@ header nav ul a {
   .article .article-listing .article-time, .videos .article-listing .article-time, .know-how .article-listing .article-time {
     display: block; }
 
+.profile {
+  font-size: 15px;
+  font-size: 1.5rem;
+  margin-top: 66px;
+  margin-top: 6.6rem;
+  padding-top: 20px;
+  padding-top: 2rem;
+  background: url("../images/paper.jpg"); }
+  .profile .card-panel {
+    padding-top: 20px;
+    padding-top: 2rem;
+    background: rgba(250, 250, 250, 0.75); }
+  .profile .profile-icon {
+    font-size: 120px;
+    font-size: 12rem;
+    color: #424242; }
+    .profile .profile-icon::before {
+      padding-top: 40px;
+      padding-top: 4rem;
+      border: 1px solid #424242;
+      border-radius: 50%;
+      display: block;
+      overflow: hidden;
+      height: 150px;
+      width: 150px;
+      text-align: center; }
+  .profile .user {
+    padding-left: 20px;
+    padding-left: 2rem;
+    margin: 10px 0;
+    margin: 1rem 0; }
+  .profile .edit {
+    margin-left: 15px;
+    margin-left: 1.5rem; }
+    .profile .edit i {
+      margin-right: 4px;
+      margin-right: 0.4rem;
+      font-size: 12px;
+      font-size: 1.2rem; }
+  .profile .user-achievement {
+    border: 1px solid #424242;
+    border-radius: 4px;
+    padding: 0; }
+  .profile .achievements {
+    padding-bottom: 5px;
+    padding-bottom: 0.5rem;
+    text-align: center; }
+    .profile .achievements:nth-child(odd) {
+      background: #424242;
+      color: #FFF; }
+    .profile .achievements h4 {
+      padding: 5px 0;
+      padding: 0.5rem 0;
+      margin: 0;
+      color: inherit; }
+  .profile .points {
+    padding-bottom: 20px;
+    padding-bottom: 2rem;
+    font-size: 30px;
+    font-size: 3rem;
+    color: #FF6600;
+    font-family: 'Amiri', serif;
+    height: 220px;
+    position: relative;
+    text-align: center;
+    text-shadow: 0px 3px 2px rgba(150, 150, 150, 0.6); }
+    .profile .points h4 {
+      margin-top: 0; }
+    .profile .points .calendar {
+      margin-right: 5px;
+      margin-right: 0.5rem;
+      margin-top: 50px;
+      margin-top: 5rem; }
+  .profile .badge-box {
+    border-left: 1px solid rgba(66, 66, 66, 0.4);
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    height: 100%; }
+  .profile .badge-title {
+    text-align: center; }
+  .profile .badges {
+    padding: 20px;
+    padding: 2rem; }
+  .profile .badge-footer {
+    padding: 10px 0;
+    padding: 1rem 0;
+    color: #FFF;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0; }
+  .profile .profile-detail {
+    padding: 0; }
+  .profile .tabs .tab a {
+    color: #FF6600; }
+  .profile .tabs .indicator {
+    background-color: #FF6600; }
+
 footer .social {
   color: #FFF;
   font-size: 15px;
@@ -6560,7 +6671,8 @@ footer .social {
   padding: 15px; }
 
 .wrapper {
-  height: 100%; }
+  height: calc(85vh);
+  margin-bottom: 0; }
 
 .parallax-container {
   height: 100%; }

@@ -78,6 +78,21 @@ h1{
     color:$h1-default-color;
 }
 
+h3{
+    font-size: $h3-font-size;
+    color: h3-default-color;
+}
+
+h4{
+    font-family: inherit;
+    font-size: $h4-font-size;
+    color:$h4-default-color;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Roboto';
+}
+
 
 header {
     position: absolute;

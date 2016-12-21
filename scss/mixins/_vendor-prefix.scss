@@ -20,3 +20,15 @@
     -moz-box-shadow:    $args;
     box-shadow:         $args;
 }
+
+@mixin display_flex() {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+}
+
+@mixin flex_direction($args...) {
+    -webkit-flex-direction: $args;
+    -moz-flex-direction: $args;
+    flex-direction: $args;
+}
