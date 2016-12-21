@@ -27,7 +27,7 @@ gulp.task("server",function(){
 });
 
 gulp.task("open",function(){
-    gulp.src(__filename).pipe(open({uri:"http://localhost:8888/gallery.html"}));
+    gulp.src(__filename).pipe(open({uri:"http://localhost:8888/profile.html"}));
 });
 
 gulp.task("html",function(){
