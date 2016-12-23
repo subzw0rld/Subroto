@@ -1,0 +1,36 @@
+.home{
+    @include rem(font-size,15px);
+    
+    .swiper-container{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .swiper-slide{
+        @include display_flex();
+        
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+    }
+    
+    .first-slide{
+        background: url('../images/amongMountains.jpg');
+    }
+    .second-slide{
+        background: url('../images/Peak.jpg');
+    }
+    .third-slide{
+        background: url('../images/WaterFall.jpg');
+    }
+    .fourth-slide{
+        background: url('../images/starryNight.jpg');
+    }
+    
+    .first-slide, .second-slide, .third-slide, .fourth-slide {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center bottom;
+    }
+}

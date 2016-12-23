@@ -4,7 +4,10 @@
 @import "variables";
 @import "global";
 @import "font";
+//@import "slick";
+//@import "slick-theme";
 @import "header";
+@import "home";
 @import "explorer";
 @import "gallery";
 @import "profile";
@@ -18,8 +21,9 @@
 }
 
 .wrapper {
-    height: calc(85vh);
+    height: calc(95vh);
     margin-bottom: 0;
+    position: relative;
 //    min-height: 500px;
 }
 

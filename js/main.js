@@ -1,7 +1,7 @@
 //$(".parallax").parallax();
 $('select').material_select();
 
-//var currentModule = document.querySelector(".wrapper").className.split(" ")[2];
+var currentModule = document.querySelector(".wrapper").className.split(" ")[2];
 var windowHeight = window.innerHeight;
 var headerHeight = $(".semi-transparent-nav").outerHeight();
 var footerHeight = $("footer").outerHeight();
@@ -50,6 +50,12 @@ if (page.indexOf("gallery")!== -1) {
     
     $('.scrollspy').scrollSpy();
     initScroll($('.scrollspy-menu'));
+}
+
+if (currentModule==="home") {
+    var swiper = new Swiper('.swiper-container', {
+        speed: 1500
+    });
 }
 
 
