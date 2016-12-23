@@ -1,5 +1,5 @@
 //Adds vendor prefix to different effects like transition, shadow etc
-@mixin vendor_transition($args){
+@mixin vendor_transition($args...){
     -webkit-transition:$args;
     -moz-transition:$args;
     -ms-transition:$args;
@@ -7,12 +7,24 @@
     transition:$args;
 }
 
-@mixin vendor_transform($args){
+@mixin vendor_transition_timing_function($args){
+    -webkit-transition-timing-function: $args;
+    -moz-transition-timing-function: $args;
+    -o-transition-timing-function: $args;
+    transition-timing-function: $args;
+}
+
+@mixin vendor_transform($args...){
     -webkit-transform:$args;
     -moz-transform:$args;
     -ms-transform:$args;
     -o-transform:$args;
     transform:$args;
+}
+
+@mixin vendor_animation_duration($args){
+    -webkit-animation-delay: $args;
+    animation-delay: $args;
 }
 
 @mixin box_shadow($args){

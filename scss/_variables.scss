@@ -4,10 +4,15 @@ $dark-grey:#424242;
 $dark-grey-40: rgba(66,66,66,0.4);
 $orange:#FF6600;
 
+$cubic-animation: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$cubic-animation-jump: cubic-bezier(0.995, 0.100, 0.175, 1.515);
+
 $form-dropdown-color:$dark-grey;
 
 $h1-font-size:52px;
 $h1-default-color:#3e2723;
+$h2-font-size: 42px;
+$h2-default-color: #333;
 $h3-font-size: 24px;
 $h3-default-color:#333;
 $h4-font-size:18px;
@@ -16,6 +21,8 @@ $h4-default-color:#333;
 $default-anchor-color: #333;
 $anchor-hover-color: #fa9000;
 
+/**** Swiper animation ****/
+$swiper-duration: 1500ms;
 
 /**** Scrollspy Variables ****/
 $scrollspy-background: rgba(3, 3, 3, 0.95);

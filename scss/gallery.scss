@@ -73,7 +73,7 @@
         }
         
         img{
-            @include vendor_transition(transform .8s cubic-bezier(0.550, 0.055, 0.675, 0.190));
+            @include vendor_transition(transform .8s $cubic-animation);
 
             display: block;
             position: absolute;

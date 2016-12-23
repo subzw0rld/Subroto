@@ -1,0 +1,21 @@
+@mixin keyframe-animation($callback){
+    @keyframes $callback{
+        @content;
+    }
+    
+    @-moz-keyframes $callback{
+        @content;
+    }
+    
+    @-webkit-keyframes $callback{
+        @content;
+    }
+    
+    @-ms-keyframes $callback{
+        @content;
+    }
+    
+    @-o-keyframes $callback{
+        @content;
+    }
+}

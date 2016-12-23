@@ -79,6 +79,11 @@ h1{
     color:$h1-default-color;
 }
 
+h2 {
+    font-size: $h2-font-size;
+    color:$h2-default-color;
+}
+
 h3{
     font-size: $h3-font-size;
     color: h3-default-color;
@@ -103,5 +108,27 @@ header {
 }
 
 img {
+    background-color: #333;
     width: 100%;
+}
+
+.arrow{
+    border: 2px solid $white;
+    border-radius: 50%;
+    display: block;
+    width: 65px;
+    height: 65px;
+    
+    .arrow-down{
+        @include vendor_transform(rotate(90deg));
+        
+        display: inline-block;
+        background: url(../svg/next.svg);
+        background-repeat: no-repeat;
+        background-size:50%;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+    }
 }

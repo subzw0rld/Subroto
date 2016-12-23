@@ -6203,6 +6203,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .picker--time .picker__box {
     margin-bottom: 5em; } }
 
+/**** Swiper animation ****/
 /**** Scrollspy Variables ****/
 html,
 body {
@@ -6265,6 +6266,10 @@ h1 {
   font-size: 52px;
   color: #3e2723; }
 
+h2 {
+  font-size: 42px;
+  color: #333; }
+
 h3 {
   font-size: 24px;
   color: h3-default-color; }
@@ -6284,7 +6289,29 @@ header {
   z-index: 1000; }
 
 img {
+  background-color: #333;
   width: 100%; }
+
+.arrow {
+  border: 2px solid #FFF;
+  border-radius: 50%;
+  display: block;
+  width: 65px;
+  height: 65px; }
+  .arrow .arrow-down {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    display: inline-block;
+    background: url(../svg/next.svg);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle; }
 
 /* fallback */
 @font-face {
@@ -6324,9 +6351,35 @@ header nav ul a {
 .home {
   font-size: 15px;
   font-size: 1.5rem; }
+
+@keyframes swoopIn {
+  50% {
+    opacity: 0.75;
+    transform: scale3d(1.5, 1.5, 1.5);
+    top: calc(60vh); }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+    top: calc(90vh); } }
+  .home .arrow {
+    color: #FFF;
+    position: absolute;
+    left: 50%;
+    top: calc(90vh);
+    z-index: 100;
+    opacity: 0;
+    animation: swoopIn 2200ms cubic-bezier(0.995, 0.1, 0.175, 1.515) forwards; }
   .home .swiper-container {
     width: 100%;
     height: 100%; }
+    .home .swiper-container .swiper_wrapper {
+      -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      -moz-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      -o-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .home .sub-text {
+    font-size: 19px;
+    font-size: 1.9rem; }
   .home .swiper-slide {
     display: -webkit-flex;
     display: -moz-flex;
@@ -6335,6 +6388,22 @@ header nav ul a {
     justify-content: space-between;
     -webkit-align-items: flex-start;
     align-items: flex-start; }
+    .home .swiper-slide .caption {
+      color: #FFF;
+      position: absolute;
+      bottom: 150px;
+      left: 150px;
+      opacity: 0;
+      -webkit-transition: opacity 1500ms cubic-bezier(0.55, 0.055, 0.675, 0.19), bottom 1500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      -moz-transition: opacity 1500ms cubic-bezier(0.55, 0.055, 0.675, 0.19), bottom 1500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      -ms-transition: opacity 1500ms cubic-bezier(0.55, 0.055, 0.675, 0.19), bottom 1500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      -o-transition: opacity 1500ms cubic-bezier(0.55, 0.055, 0.675, 0.19), bottom 1500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      transition: opacity 1500ms cubic-bezier(0.55, 0.055, 0.675, 0.19), bottom 1500ms cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+      .home .swiper-slide .caption h2 {
+        color: #FFF; }
+  .home .swiper-slide-active .caption {
+    opacity: 1;
+    bottom: 350px; }
   .home .first-slide {
     background: url("../images/amongMountains.jpg"); }
   .home .second-slide {
@@ -6347,6 +6416,9 @@ header nav ul a {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom; }
+
+.wrapper.home {
+  height: calc(120vh); }
 
 .explorer {
   font-size: 15px;

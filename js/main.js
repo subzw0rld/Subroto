@@ -54,7 +54,9 @@ if (page.indexOf("gallery")!== -1) {
 
 if (currentModule==="home") {
     var swiper = new Swiper('.swiper-container', {
-        speed: 1500
+        autoplay: 3500,
+        speed: 1500,
+        loop: true
     });
 }
 
