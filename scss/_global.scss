@@ -1,9 +1,11 @@
 html,
 body {
+    @include vendor_transition(top $cubic-animation);
     padding: 0;
     margin: 0;
-//    height: 100%;
+    //    height: 100%;
     overflow-x: hidden;
+    background-color: $light-grey;
 }
 
 html {
@@ -37,68 +39,65 @@ html {
 
 /* close commented backslash hack */
 
-footer {
-    background: $dark-grey;
-    @include rem(min-height,70px);
-    @include rem(padding, 20px);
-
-    div.container{
-        text-align: center;
-    }
-
-    nav {
-        @include rem(padding, 8px);
-    }
-    ul {
-        li {
-            @include rem(line-height, 50px);
-        }
-    }
-}
-
-footer.row{
-    margin-bottom: 0;
-}
-
-input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
-    border-bottom:1px solid $dark-grey;
+input:not([type]):focus:not([readonly]),
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid $dark-grey;
     box-shadow: 0 1px 0 0 $dark-grey;
-    @include rem(font-size,15px);
+    @include rem(font-size, 15px);
 }
 
-a{
+a {
     color: $default-anchor-color;
-    
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         color: $anchor-hover-color;
     }
 }
 
-h1{
+h1 {
     font-size: $h1-font-size;
-    color:$h1-default-color;
+    color: $h1-default-color;
 }
 
 h2 {
-    font-size: $h2-font-size;
-    color:$h2-default-color;
+    font-size: $h2-media-font-size;
+    color: $h2-default-color;
+    
+    @media only screen and (min-width: 640px){
+        font-size: $h2-font-size;
+    }
 }
 
-h3{
+h3 {
     font-size: $h3-font-size;
     color: h3-default-color;
 }
 
-h4{
+h4 {
     font-family: inherit;
     font-size: $h4-font-size;
-    color:$h4-default-color;
+    color: $h4-default-color;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Roboto';
 }
-
 
 header {
     position: absolute;
@@ -112,23 +111,33 @@ img {
     width: 100%;
 }
 
-.arrow{
-    border: 2px solid $white;
-    border-radius: 50%;
+.arrow {
     display: block;
-    width: 65px;
-    height: 65px;
+    width: 335px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto; 
     
-    .arrow-down{
+    .arrow-down {
         @include vendor_transform(rotate(90deg));
-        
-        display: inline-block;
+        border: 2px solid $white;
+        border-radius: 50%;
+        display: block;
         background: url(../svg/next.svg);
         background-repeat: no-repeat;
-        background-size:50%;
+        background-size: 50%;
         background-position: center;
-        width: 100%;
-        height: 100%;
-        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 140px;
+        
+        @media only screen and (min-width: 640px) {
+            width: 65px;
+            height: 65px;
+        }
     }
 }

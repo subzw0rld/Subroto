@@ -2,6 +2,9 @@ $white:#FFF;
 $semi-transparent-nav-bg:rgba(3, 3, 3, 0.4);
 $dark-grey:#424242;
 $dark-grey-40: rgba(66,66,66,0.4);
+$dark-grey-5: rgba(66,66,66,0.05);
+
+$light-grey: #F1F1F1;
 $orange:#FF6600;
 
 $cubic-animation: cubic-bezier(0.550, 0.055, 0.675, 0.190);
@@ -12,6 +15,7 @@ $form-dropdown-color:$dark-grey;
 $h1-font-size:52px;
 $h1-default-color:#3e2723;
 $h2-font-size: 42px;
+$h2-media-font-size: 32px;
 $h2-default-color: #333;
 $h3-font-size: 24px;
 $h3-default-color:#333;
@@ -29,4 +33,9 @@ $scrollspy-background: rgba(3, 3, 3, 0.95);
 $scrollspy-menu-item-color: $white;
 $scrollspy-menu-item-font-size: 15px;
 $scrollspy-active-border-color: $white;
-$scrollspy-shadow-color: rgba(50, 50, 50, 0.45)
+$scrollspy-shadow-color: rgba(50, 50, 50, 0.45);
+
+/**** Homepage Variables ****/
+$profile-pic-border-color: #bdbdbd;
+$arrow-animation-time: 1.2s;
+$arrow-cubic-animation: cubic-bezier(0.77, 0, 0.175, 1);

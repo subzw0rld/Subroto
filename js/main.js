@@ -54,9 +54,22 @@ if (page.indexOf("gallery")!== -1) {
 
 if (currentModule==="home") {
     var swiper = new Swiper('.swiper-container', {
-        autoplay: 3500,
+//        autoplay: 3500,
         speed: 1500,
         loop: true
+    });
+    
+    var swiperHeight=$('.swiper-container').height();
+    var $arrow=$('.'+currentModule).find('.arrow');
+    
+    $arrow.addClass('active');
+    $arrow.on("click", function(event){
+        event.preventDefault();
+        
+        //$(window).scrollTop($('.swiper-container').height());
+        $('body').animate({
+            scrollTop: swiperHeight
+        }, 900)
     });
 }
 

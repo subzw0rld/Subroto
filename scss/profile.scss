@@ -3,7 +3,9 @@
     @include rem(margin-top,66px);
     @include rem(padding-top, 20px);
     
-    background: url('../images/paper.jpg');
+    min-height: calc(100vh - 136px);
+    
+//    background: url('../images/paper.jpg');
     
     .card-panel {
         @include rem(padding-top, 20px);
@@ -84,7 +86,7 @@
     }
     
     .badge-box{
-        border-left: 1px solid $dark-grey-40;
+        border-left: 1px solid $dark-grey-5;
         padding-left: 0;
         padding-right: 0;
         position: relative;

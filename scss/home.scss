@@ -1,33 +1,55 @@
 .home{
     @include rem(font-size,15px);
     
-    @keyframes swoopIn{
-        50%{
-            opacity: 0.75;
-            transform: scale3d(1.5,1.5,1.5);
-            top: calc(60vh);
-        }
-        
-        100%{
-            opacity: 1;
-            transform: scale3d(1,1,1);
-            top: calc(90vh);
-        }
-    }
+//    @keyframes swoopIn{
+//        50%{
+//            opacity: 0.75;
+//            transform: scale3d(1.5,1.5,1.5);
+//            top: calc(60vh);
+//        }
+//        
+//        100%{
+//            opacity: 1;
+//            transform: scale3d(1,1,1);
+//            top: calc(90vh);
+//        }
+//    }
     
     .arrow{
+        @include vendor_transition(top $arrow-animation-time $arrow-cubic-animation, opacity $arrow-animation-time $arrow-cubic-animation);
         color: $white;
-        position: absolute;
-        left: 50%;
-        top: calc(90vh);
+//        position: absolute;
+//        left: 127px;
+        top: calc(120vh);
         z-index: 100;
         opacity: 0;
-        animation: swoopIn 2200ms $cubic-animation-jump forwards;
+        
+//        @media only screen and (min-width: 640px){
+//            left: 50%;
+//        }
+    }
+    
+    .arrow.active{
+        //animation: swoopIn 2200ms $cubic-animation-jump forwards;
+        opacity: 1;
+        top: calc(65vh);
+        
+        @media only screen and (min-width: 992px){
+            top: calc(90vh);
+        }
+        
+        @media only screen and (max-width: 640px){
+            top: calc(75vh);
+        }
     }
     
     .swiper-container{
         width: 100%;
-        height: 100%;
+        height: calc(90vh);
+        
+        @media only screen and (min-width: 992px){
+            height: calc(120vh);
+        }
         
         .swiper_wrapper{
             @include vendor_transition_timing_function($cubic-animation);
@@ -47,13 +69,17 @@
         align-items: flex-start;
         
         .caption {
+            @include vendor_transition(opacity $swiper-duration $cubic-animation, top $swiper-duration $cubic-animation);
+            
             color: $white;
             position: absolute;
-            bottom: 150px;
-            left: 150px;
+            top: 100%;
             opacity: 0;
+            width: 100%;
             
-            @include vendor_transition(opacity $swiper-duration $cubic-animation, bottom $swiper-duration $cubic-animation);
+//            @media only screen and (max-width: 640px){
+//                top: 150px;
+//            }
             
             h2{
                 color: $white;
@@ -64,7 +90,11 @@
     .swiper-slide-active{
         .caption{
             opacity: 1;
-            bottom: 350px;
+            top: 20%;
+            
+//            @media only screen and (min-width: 640px){
+//                top: 350px;
+//            }
         }
     }
     
@@ -87,8 +117,62 @@
         background-position: center bottom;
     }
     
-}
-
-.wrapper.home{
-    height: calc(120vh);
+    .content{
+        @include rem(padding, 30px);
+        
+        min-height: 300px;
+        box-sizing: border-box;
+        
+        .content-box{
+            @include rem(padding, 20px);
+            @include rem(font-size, 14px);
+            
+            border-radius: 12px;
+            line-height: 2.4rem;
+            position: relative;
+            text-align: justify;
+        }
+        
+    }
+    
+    .profile{
+        background: none;
+        min-height: 1px;
+        
+        .content-box {
+            @include rem(margin-top, 90px);
+        }
+    }
+    
+    .profile-pic{
+        @include rem(padding, 5px);
+        
+        background-color: $profile-pic-border-color;
+        box-sizing: border-box;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        left: -4px;
+        top: -55px;
+    }
+    
+    .profile-detail{
+        text-align: justify;
+        line-height: 2.4rem;
+        
+        span{
+            display: block;
+        }
+        
+        .first-row{
+            @include rem(margin-top, 70px);
+            @include rem(margin-bottom, 10px);
+            
+            @media only screen and (min-width: 480px){
+                @include rem(margin-left, 140px);
+                margin-top: 0;
+            }
+        }
+    }
 }

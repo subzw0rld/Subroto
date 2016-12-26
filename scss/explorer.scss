@@ -13,7 +13,7 @@
             @include rem(margin-left,-125px);
             @include rem(width, 250px);
             height: auto;
-            background: $white;
+            background: $light-grey;
             border-radius: 8px 8px 0 0;
             text-align: center;
         }

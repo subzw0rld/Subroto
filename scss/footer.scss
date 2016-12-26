@@ -2,6 +2,26 @@ footer{
 //    position: absolute;
 //    bottom: 0;
 //    width: 100%;
+    
+    background: $dark-grey;
+    @include rem(height,70px);
+    @include rem(padding, 20px);
+
+    margin-bottom: 0 !important;
+    
+    div.container{
+        text-align: center;
+    }
+
+    nav {
+        @include rem(padding, 8px);
+    }
+    ul {
+        li {
+            @include rem(line-height, 50px);
+        }
+    }
+    
     .social{
         color: #FFF;
         font-size: 15px;
