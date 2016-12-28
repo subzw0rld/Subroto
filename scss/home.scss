@@ -18,38 +18,25 @@
     .arrow{
         @include vendor_transition(top $arrow-animation-time $arrow-cubic-animation, opacity $arrow-animation-time $arrow-cubic-animation);
         color: $white;
-//        position: absolute;
-//        left: 127px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
         top: calc(120vh);
         z-index: 100;
         opacity: 0;
-        
-//        @media only screen and (min-width: 640px){
-//            left: 50%;
-//        }
     }
     
     .arrow.active{
         //animation: swoopIn 2200ms $cubic-animation-jump forwards;
         opacity: 1;
-        top: calc(65vh);
-        
-        @media only screen and (min-width: 992px){
-            top: calc(90vh);
-        }
-        
-        @media only screen and (max-width: 640px){
-            top: calc(75vh);
-        }
+        top: calc(90vh);
     }
     
     .swiper-container{
         width: 100%;
-        height: calc(90vh);
-        
-        @media only screen and (min-width: 992px){
-            height: calc(120vh);
-        }
+        height: calc(100vh);
         
         .swiper_wrapper{
             @include vendor_transition_timing_function($cubic-animation);
@@ -76,10 +63,13 @@
             top: 100%;
             opacity: 0;
             width: 100%;
+            text-shadow: $text-shadow;
+            text-align: center;
             
-//            @media only screen and (max-width: 640px){
-//                top: 150px;
-//            }
+            @media only screen and (min-width: $screen-tablet){
+                @include rem(padding-left, 20px);
+                text-align: left;
+            }
             
             h2{
                 color: $white;
@@ -90,11 +80,7 @@
     .swiper-slide-active{
         .caption{
             opacity: 1;
-            top: 20%;
-            
-//            @media only screen and (min-width: 640px){
-//                top: 350px;
-//            }
+            top: 50%;
         }
     }
     
@@ -169,7 +155,7 @@
             @include rem(margin-top, 70px);
             @include rem(margin-bottom, 10px);
             
-            @media only screen and (min-width: 480px){
+            @media only screen and (min-width: $screen-mob){
                 @include rem(margin-left, 140px);
                 margin-top: 0;
             }

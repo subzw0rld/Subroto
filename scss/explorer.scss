@@ -2,20 +2,33 @@
     @include rem(font-size,15px);
     
     .explore-form {
-        position: relative;
         @include rem(padding-top,20px);
-//        padding-bottom: 50px !important;
         @include rem(padding-bottom,50px);
+        
+        position: relative;
+        
         .explorer-title {
+            @include rem(margin-left,-125px);
             position: absolute;
             left: 50%;
-            @include rem(top,-80px);
-            @include rem(margin-left,-125px);
-            @include rem(width, 250px);
+            top: -70px;
+            width: 250px;
             height: auto;
             background: $light-grey;
             border-radius: 8px 8px 0 0;
             text-align: center;
+            
+            @media only screen and (min-width: $screen-phablet) {
+                top: -80px;
+            }
+            
+        }
+        
+        .search-btn {
+            i {
+                @include rem(font-size, 15px);
+                vertical-align: middle;
+            }
         }
     }
     
@@ -23,5 +36,27 @@
         border-top: 1px solid #d0d0d0;
         padding-top: 20px;
         padding-bottom: 50px !important;
+    }
+    
+    .review {
+        @include rem(margin-left, 8px);
+        @include rem(font-size, 11px);
+        
+        color: $orange;
+    }
+    
+    table.responsive-table {
+        tbody {
+            tr {
+                @media only screen and (max-width: $screen-desktop) {
+                    width: 50%;
+                }
+                
+                @media only screen and (max-width: $screen-phablet) {
+                    width: 100%;
+                }
+            }
+        }
+        
     }
 }

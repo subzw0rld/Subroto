@@ -20,20 +20,28 @@
 <body>
     <header>
         <nav class="semi-transparent-nav">
-            <ul>
-                <li class="active">
-                    <a href="#">Explorer</a>
+            <span class="burger-menu">
+                <span class="bar-icon fa fa-bars"></span>
+                <span class="close-icon fa fa-close"></span>
+            </span>
+            <a href="/" class="logo">
+                <img class="responsive-img" src="images/logo2.png" alt="Logo">
+            </a>
+            <ul class="header-nav">
+                <li>
+                    <a href="explorer.html"><i class="fa fa-wpexplorer" aria-hidden="true"></i>Explorer</a>
                 </li>
                 <li>
-                    <a href="#">Gallery</a>
+                    <a href="gallery.html"><i class="fa fa-image" aria-hidden="true"></i>Gallery</a>
                 </li>
                 <li>
-                    <a href="#">TrekTalk</a>
+                    <a href="#"><i class="fa fa-commenting" aria-hidden="true"></i>TrekTalk</a>
                 </li>
                 <li>
-                    <a href="#">Attractions</a>
+                    <a href="#"><i class="fa fa-globe" aria-hidden="true"></i>Attractions</a>
                 </li>
             </ul>
+            <a href="#" class="sign-in btn-large waves-effect waves-orange"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a>
         </nav>
     </header>
     <section class="row wrapper explorer">
@@ -115,7 +123,7 @@
             <div class="input-field col s12 m12">
                 <input type="text" placeholder="What's Next ?" name="search" id="search" class="col s10 m10">
                 <div class="col s2 m2">
-                    <a href="javascript:void(0);" class="waves-effect waves-light btn grey darken-3"><i class="material-icons left">search</i> Search</a>
+                    <a href="javascript:void(0);" class="search-btn waves-effect waves-light btn grey darken-3 col s12 m12"><i class="material-icons">search</i> Search</a>
                 </div>
 
             </div>
@@ -135,7 +143,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="#">Bikat Adventures</a><div>Reviews:2</div></td>
+                        <td><a href="#">Bikat Adventures</a><span class="review">Reviews: 2</span></td>
                         <td>***</td>
                         <td><a href="#">Khauli Pass Trek</a></td>
                         <td>Rs. 6200</td>
@@ -143,7 +151,7 @@
                         <td><a href="#" class="btn grey darken-3">Book Now</a></td>
                     </tr>
                     <tr>
-                        <td><a href="#">ABC Adventures</a><div>Reviews:2</div></td>
+                        <td><a href="#">ABC Adventures</a><span class="review">Reviews: 2</span></td>
                         <td>***</td>
                         <td><a href="#">Khauli Pass Trek</a></td>
                         <td>Rs. 6200</td>

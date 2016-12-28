@@ -10,23 +10,38 @@
     .card-panel {
         @include rem(padding-top, 20px);
         background: rgba(250, 250, 250, 0.75);
+        
+        @media only screen and (max-width: $screen-desktop) {
+            @include rem(padding-bottom, 20px);
+        }
     }
     
     .profile-icon{
-        @include rem(font-size, 120px);
+        @include rem(font-size, 90px);
         
         color: $dark-grey;
         
+        @media only screen and (min-width: $screen-desktop) {
+            @include rem(font-size, 120px);
+        }
+        
         &::before{
-            @include rem(padding-top, 40px);
+            @include rem(padding-top, 20px);
             
             border: 1px solid $dark-grey;
             border-radius: 50%;
             display: block;
             overflow: hidden;
-            height: 150px;
-            width: 150px;
+            height: 100px;
+            width: 100px;
             text-align: center;
+            
+            @media only screen and (min-width: $screen-desktop) {
+                @include rem(padding-top, 40px);
+                
+                height: 150px;
+                width: 150px;
+            }
         }
     }
     
@@ -114,17 +129,5 @@
     
     .profile-detail {
         padding: 0;
-    }
-    
-    .tabs{
-        .tab{
-            a{
-                color: $orange;
-            }
-        }
-        
-        .indicator{
-            background-color: $orange;
-        }
     }
 }

@@ -1,11 +1,21 @@
+$screen-mob: 480px;
+$screen-phablet: 640px;
+$screen-tablet: 768px;
+$screen-desktop: 992px;
+
 $white:#FFF;
+$white-40: rgba(255, 255, 255, 0.4);
+$white-85: rgba(255, 255, 255, 0.85);
 $semi-transparent-nav-bg:rgba(3, 3, 3, 0.4);
 $dark-grey:#424242;
 $dark-grey-40: rgba(66,66,66,0.4);
 $dark-grey-5: rgba(66,66,66,0.05);
 
+$text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.4);
+
 $light-grey: #F1F1F1;
 $orange:#FF6600;
+$red: #ef5350;
 
 $cubic-animation: cubic-bezier(0.550, 0.055, 0.675, 0.190);
 $cubic-animation-jump: cubic-bezier(0.995, 0.100, 0.175, 1.515);
@@ -13,6 +23,7 @@ $cubic-animation-jump: cubic-bezier(0.995, 0.100, 0.175, 1.515);
 $form-dropdown-color:$dark-grey;
 
 $h1-font-size:52px;
+$h1-media-font-size: 40px;
 $h1-default-color:#3e2723;
 $h2-font-size: 42px;
 $h2-media-font-size: 32px;
@@ -24,6 +35,7 @@ $h4-default-color:#333;
 
 $default-anchor-color: #333;
 $anchor-hover-color: #fa9000;
+$label-color: #333;
 
 /**** Swiper animation ****/
 $swiper-duration: 1500ms;
@@ -34,6 +46,9 @@ $scrollspy-menu-item-color: $white;
 $scrollspy-menu-item-font-size: 15px;
 $scrollspy-active-border-color: $white;
 $scrollspy-shadow-color: rgba(50, 50, 50, 0.45);
+
+/**** Header Variables ****/
+$sign-in-hover-color: $white-85;
 
 /**** Homepage Variables ****/
 $profile-pic-border-color: #bdbdbd;

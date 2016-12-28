@@ -1,9 +1,8 @@
-.scrollspy-menu{
+.scrollspy-menu {
     @include rem(font-size, $scrollspy-menu-item-font-size);
     @include rem(padding, 0 10px);
     @include box_shadow(0 8px 8px 0 $scrollspy-shadow-color);
     @include vendor_transition(top 0.1s cubic-bezier(0.53, 0.06, 0.42, 0.85));
-    
     background: $scrollspy-background;
     box-sizing: border-box;
     color: $scrollspy-menu-item-color;
@@ -13,24 +12,19 @@
     top: 66px;
     width: 100%;
     z-index: 20;
-    
-    li{
+    li {
         text-align: center;
         height: 100%;
     }
-    
-    a{
+    a {
         @include rem(padding, 15px);
-        
         display: block;
         color: inherit;
         height: 100%;
         position: relative;
-        
-        &::after{
+        &::after {
             @include vendor_transition(transform 0.8s cubic-bezier(0.53, 0.06, 0.42, 0.85));
             @include vendor_transform(scaleX(0));
-            
             display: block;
             content: "";
             border-bottom: 4px solid $scrollspy-active-border-color;
@@ -40,10 +34,21 @@
             left: 0;
         }
     }
-    
-    a.active{
-        &::after{
+    a.active {
+        &::after {
             @include vendor_transform(scaleX(1));
+        }
+    }
+    .fa {
+        display: inline-block;
+        @media only screen and (min-width: 640px) {
+            display: none;
+        }
+    }
+    .spymenu-text {
+        display: none;
+        @media only screen and (min-width: 640px) {
+            display: block;
         }
     }
 }

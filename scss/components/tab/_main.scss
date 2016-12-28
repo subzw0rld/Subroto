@@ -1,0 +1,12 @@
+.tabs{
+    @include rem(font-size, 15px);
+    .tab{
+        a{
+            color: $orange;
+        }
+    }
+
+    .indicator{
+        background-color: $orange;
+    }
+}

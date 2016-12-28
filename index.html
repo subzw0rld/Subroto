@@ -22,46 +22,53 @@
 <body>
     <header>
         <nav class="semi-transparent-nav">
-            <a href="#" class="burger-menu fa fa-bars"></a>
+            <span class="burger-menu">
+                <span class="bar-icon fa fa-bars"></span>
+                <span class="close-icon fa fa-close"></span>
+            </span>
+            <a href="/" class="logo">
+                <img class="responsive-img z-depth-1 circle" src="images/logo2.png" alt="Logo">
+            </a>
             <ul class="header-nav">
                 <li>
-                    <a href="explorer.html">Explorer</a>
+                    <a href="explorer.html"><i class="fa fa-wpexplorer" aria-hidden="true"></i>Explorer</a>
                 </li>
                 <li>
-                    <a href="gallery.html">Gallery</a>
+                    <a href="gallery.html"><i class="fa fa-image" aria-hidden="true"></i>Gallery</a>
                 </li>
                 <li>
-                    <a href="#">TrekTalk</a>
+                    <a href="#"><i class="fa fa-commenting" aria-hidden="true"></i>TrekTalk</a>
                 </li>
                 <li>
-                    <a href="#">Attractions</a>
+                    <a href="#"><i class="fa fa-globe" aria-hidden="true"></i>Attractions</a>
                 </li>
             </ul>
+            <button class="sign-in btn-large waves-effect waves-dark"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</button>
         </nav>
     </header>
     <section class="row wrapper home">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide first-slide">
-                    <div class="caption center-align">
+                    <div class="caption">
                         <h2>It's a long road</h2>
                         <p class="sub-text light grey-text text-lighten-3">But it's worth it.</p>
                     </div>
                 </div>
                 <div class="swiper-slide second-slide">
-                    <div class="caption center-align">
+                    <div class="caption">
                         <h2>The mountains are calling</h2>
                         <p class="sub-text light grey-text text-lighten-3">And I must go</p>
                     </div>
                 </div>
                 <div class="swiper-slide third-slide">
-                    <div class="caption center-align">
+                    <div class="caption">
                         <h2>The deepest sea has a bottom</h2>
                         <p class="sub-text light grey-text text-lighten-3">The highest mountain has a summit</p>
                     </div>
                 </div>
                 <div class="swiper-slide fourth-slide">
-                    <div class="caption center-align">
+                    <div class="caption">
                         <h2>The sight of the stars</h2>
                         <p class="sub-text light grey-text text-lighten-3">Always makes me dream</p>
                     </div>
@@ -69,7 +76,7 @@
             </div>
         </div>
         <a href="#" class="arrow">
-            <span class="arrow-down"></span>
+            <span class="arrow-down waves-effect waves-circle waves-orange"></span>
         </a>
         <section class="content">
             <div class="content-box grey lighten-1">
@@ -119,7 +126,117 @@
                 </div>
             </div>
         </section>
+        <a href="javascript:void(0);" class="scroll-top">
+            <span class="arrow-up waves-effect waves-circle waves-orange"></span>
+        </a>
     </section>
+    <section class="drawer row z-depth-2">
+        <section class="login-section col s12">
+            <ul class="drawer-tab tabs">
+                <li class="tab col s3">
+                    <a class="sign active" href="#signIn">Sign-In</a>
+                </li>
+                <li class="tab col s3">
+                    <a href="#register">Register</a>
+                </li>
+                <li class="tab col s3">
+                    <a id="tocTab" href="#tc">Terms and Condition</a>
+                </li>
+            </ul>
+            <div id="signIn" class="col s12">
+                <form action="http://trekoholic.com/home" method="post" accept-charset="utf-8" onsubmit="return login_submit()">
+                    <div class="form-row">
+                        <label for="email" class="required">
+                            Email:
+                        </label>
+                        <input name="email" type="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="pwd" class="required">
+                            Password:
+                        </label>
+                        <input name="pwd" type="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-row center-align">
+                        <button class="btn waves-effect waves-light submit-btn" type="submit" name="action">Login
+                            <i class="material-icons">send</i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div id="register" class="col s12">
+                <form action="http://trekoholic.com/home" method="post" accept-charset="utf-8" onsubmit="return signup_submit()">
+                    <div class="form-row">
+                        <label for="fname" class="required">
+                            Name:
+                        </label>
+                        <input name="fname" type="text" placeholder="Enter your complete name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="regEmail" class="required">
+                            Email:
+                        </label>
+                        <input name="regEmail" type="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="regPWD" class="required">
+                            Password:
+                        </label>
+                        <input name="regPWD" type="password" placeholder="Enter your password" required>
+                        <label>Minimum of 6 and Maximum of 25 characters</label>
+                    </div>
+                    <div class="form-row">
+                        <input type="checkbox" name="tos" id="tos">
+                        <label for="tos"> I agree to the <a class="toc-link">Terms and Condition</a></label>
+                    </div>
+                    <div class="form-row center-align">
+                        <button class="btn waves-effect waves-light submit-btn" type="submit" name="action">Sign Up
+                            <i class="material-icons" aria-hidden="true">send</i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div id="tc" class="col s12">
+                <h1 class="section-title">Terms and Condition</h1>
+                <p>
+                    <span class="title">Statement of Rights and Responsibilities</span>
+                    This Statement of Rights and Responsibilities ("Statement," "Terms," or "SRR") derives from the Trekoholic Principles, and is our terms of service that governs our relationship with users and others who interact with Trekoholic, as well as Trekoholic brands, products and services, which we call the “Trekoholic Services” or “Services”. By using or accessing the Trekoholic Services, you agree to this Statement, as updated from time to time in accordance with Section 13 below. Additionally, you will find resources at the end of this document that help you understand how Trekoholic works. Because Trekoholic provides a wide range of Services, we may ask you to review and accept supplemental terms that apply to your interaction with a specific app, product, or service. To the extent those supplemental terms conflict with this SRR, the supplemental terms associated with the app, product, or service govern with respect to your use of such app, product or service to the extent of the conflict.
+                </p>
+                <p>
+                    <span class="title">Privacy</span>
+                    Your privacy is very important to us. We designed our Data Policy to make important disclosures about how you can use Trekoholic to share with others and how we collect and can use your content and information. We encourage you to read the Data Policy, and to use it to help you make informed decisions.
+                </p>
+                <p>
+                    <span class="title">Sharing Your Content and Information</span>
+                    You own all of the content and information you post on Trekoholic, and you can control how it is shared through your privacy and application settings. In addition:
+                    <ol>
+                        <li>
+                            For content that is covered by intellectual property rights, like photos and videos (IP content), you specifically give us the following permission, subject to your privacy and application settings: you grant us a non-exclusive, transferable, sub-licensable, royalty-free, worldwide license to use any IP content that you post on or in connection with Trekoholic (IP License). This IP License ends when you delete your IP content or your account unless your content has been shared with others, and they have not deleted it.
+                        </li>
+                        <li>
+                            When you delete IP content, it is deleted in a manner similar to emptying the recycle bin on a computer. However, you understand that removed content may persist in backup copies for a reasonable period of time (but will not be available to others).
+                        </li>
+                        <li>
+                            When you use an application, the application may ask for your permission to access your content and information as well as content and information that others have shared with you. We require applications to respect your privacy, and your agreement with that application will control how the application can use, store, and transfer that content and information. (To learn more about Platform, including how you can control what information other people may share with applications, read our Data Policy and Platform Page.)
+                        </li>
+                        <li>
+                            When you publish content or information using the Public setting, it means that you are allowing everyone, including people off of Trekoholic, to access and use that information, and to associate it with you (i.e., your name and profile picture).
+                        </li>
+                        <li>
+                            We always appreciate your feedback or other suggestions about Trekoholic, but you understand that we may use your feedback or suggestions without any obligation to compensate you for them (just as you have no obligation to offer them).
+                        </li>
+                    </ol>
+                </p>
+            </div>
+        </section>
+        <div>
+            <a href="javascript:void(0);" class="close-btn">
+                <span class="fa fa-close"></span>
+                Close
+            </a>
+        </div>
+    </section>
+
     <footer class="row">
         <div class="container">
             <a href="https://www.facebook.com/" class="social">

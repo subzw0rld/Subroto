@@ -6,6 +6,10 @@ body {
     //    height: 100%;
     overflow-x: hidden;
     background-color: $light-grey;
+    
+    &::selection {
+        background: $orange;
+    }
 }
 
 html {
@@ -66,15 +70,19 @@ a {
 }
 
 h1 {
-    font-size: $h1-font-size;
+    font-size: $h1-media-font-size;
     color: $h1-default-color;
+    
+    @media only screen and (min-width: $screen-phablet){
+        font-size: $h1-font-size;
+    }
 }
 
 h2 {
     font-size: $h2-media-font-size;
     color: $h2-default-color;
     
-    @media only screen and (min-width: 640px){
+    @media only screen and (min-width: $screen-phablet){
         font-size: $h2-font-size;
     }
 }
@@ -115,14 +123,8 @@ img {
     display: block;
     width: 335px;
     height: 50px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto; 
     
     .arrow-down {
-        @include vendor_transform(rotate(90deg));
         border: 2px solid $white;
         border-radius: 50%;
         display: block;
@@ -135,9 +137,101 @@ img {
         position: absolute;
         left: 140px;
         
-        @media only screen and (min-width: 640px) {
+        @media only screen and (min-width: $screen-phablet) {
             width: 65px;
             height: 65px;
         }
+    }
+    
+    .arrow-down {
+        @include vendor_transform(rotate(90deg));
+    }
+    
+    
+}
+
+.scroll-top {
+    position: fixed;
+    right: 20px;
+    bottom: 85px;
+    
+    .arrow-up {
+        @include vendor_transform(rotate(-90deg));
+        
+        border: 2px solid $white;
+        border-radius: 50%;
+        display: block;
+        background: url(../svg/next.svg) $dark-grey;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: center;
+        width: 50px;
+        height: 50px;
+        
+        @media only screen and (min-width: $screen-phablet) {
+            width: 65px;
+            height: 65px;
+        }
+    }
+}
+
+label {
+    @include rem(font-size, 10px);
+    color: $label-color;
+}
+
+p {
+    @include rem(font-size, 15px);
+    text-align: justify;
+}
+
+.form-row {
+    @include rem(margin-top, 10px);
+}
+
+.submit-btn {
+    @include rem(font-size, 15px);
+    @include rem(margin-top, 30px);
+    
+    width: 60%;
+    height: 50px;
+    
+    i {
+        vertical-align: middle;
+    }
+    
+    @media only screen and (min-width: $screen-desktop) {
+        width: 150px;
+    }
+}
+
+.required {
+    &::before {
+        content: "*";
+        color: $red;
+    }
+}
+
+.section-title {
+    @include rem(font-size, 42px);
+    @include rem(padding-bottom, 15px);
+    
+    border-bottom: 1px solid $light-grey;
+}
+
+.title {
+    @include rem(font-size, 18px);
+    @include rem(margin-bottom, 15px);
+    color: $dark-grey;
+    display: block;
+}
+
+#tc {
+    overflow-y: auto;
+    max-height: calc(80vh);
+    
+    li{
+        @include rem(font-size, 15px);
+        @include rem(margin-top, 10px);
     }
 }

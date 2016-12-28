@@ -1,4 +1,20 @@
 header{
+    text-shadow: $text-shadow;
+    
+    .logo {
+        @include rem(padding, 3px);
+        @include rem(margin-left, 5px);
+        
+        box-sizing: border-box;
+        display: inline-block;
+        width: 66px;
+        height: 66px;
+        vertical-align: top;
+        
+        img {
+            background: transparent;
+        }
+    }
     .semi-transparent-nav {
         background-color: $semi-transparent-nav-bg;
     }
@@ -11,34 +27,89 @@ header{
     }
     
     nav{
+        @include rem(line-height, 66px);
         ul{
             a{
-                @include rem(font-size,15px); 
+                @include rem(font-size,15px);
+                
+                i {
+                    @include rem(margin-right, 5px);
+                    height: 30px;//To overwrite the 56px height set by materialize for "i" element inside "nav"
+                }
             }
         }
+    }
+    
+    .sign-in {
+        @include rem(font-size,15px);
+        @include rem(margin-right, 20px);
+        @include rem(margin-top, 5px);
+        
+        background-color: transparent;
+        float: right;
+        
+        &:hover{
+            background-color: $sign-in-hover-color;
+        }
+        
+        i {
+            @include rem(margin-right, 5px);
+        }
+    }
+    
+    .bar-icon, .close-icon {
+        position: absolute;
+    }
+    
+    .close-icon {
+        @include vendor_transition(transform 800ms $cubic-animation, opacity 800ms $cubic-animation);
+        opacity: 0;
+    }
+    
+    .bar-icon {
+        @include vendor_transition(opacity 400ms $cubic-animation);
+        opacity: 1;
+    }
+    
+    .bar-icon.hidden {
+        opacity: 0;
+    }
+    
+    .close-icon.show {
+        @include vendor_transform(rotate(360deg));
+        opacity: 1;
     }
     
     .header-nav {
         display: none;
         position: absolute;
+        top: 66px;
+        left: 0;
         width: 100%;
         background: $dark-grey;
-        @media only screen and (min-width: 640px){
+        @media only screen and (min-width: 992px){
             position: relative;
             background: none;
-            display: block;
+            display: inline-block;
+            opacity: 1;
+            top: 0;
+            width: 50%;
         }
+    }
+    
+    .header-nav.show {
+        display: inline-block;
     }
     
     .burger-menu {
         @include rem(padding, 25px);
         @include rem(font-size, 20px);
         background: #000;
-        display: block;
+        display: inline-block;
         width: 66px;
         height: 66px;
 
-        @media only screen and (min-width: 640px){
+        @media only screen and (min-width: $screen-desktop){
             display: none;
         }
     }

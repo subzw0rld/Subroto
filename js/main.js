@@ -1,14 +1,21 @@
 //$(".parallax").parallax();
 $('select').material_select();
+$('.drawer-tab').tabs();
 
 var currentModule = document.querySelector(".wrapper").className.split(" ")[2];
 var windowHeight = window.innerHeight;
 var headerHeight = $(".semi-transparent-nav").outerHeight();
 var footerHeight = $("footer").outerHeight();
+var swiperHeight=$('.swiper-container').height();
 
 var cardPosition = "odd";
 var initPosition = 20;
 var verticalPosition = 15;
+
+var $barIcon=$('.burger-menu').find('.bar-icon');
+var $closeIcon=$('.burger-menu').find('.close-icon');
+var $drawerCloseBtn=$('.drawer').find('.close-btn');
+var $signInBtn=$('.sign-in');
 
 var destinationCollection = ["Arunachal Pradesh", "Spiti", "Leh", "Meghalaya", "Manipur", "Mizoram", "Stoke Kangri", "Manali", "McLeodGanj", "Mana Village", "Kerala", "Coorg", "Pondicherry", "Kashmir", "Ziro", "Nagaland", "Guwahati", "Pobitora", "Madhya Pradesh"];
 
@@ -48,18 +55,17 @@ if (page.indexOf("gallery")!== -1) {
         "scrolling": "no"
     });
     
-    $('.scrollspy').scrollSpy();
+    $('.scrollspy').scrollSpy({scrollOffset: 50});
     initScroll($('.scrollspy-menu'));
 }
 
 if (currentModule==="home") {
     var swiper = new Swiper('.swiper-container', {
-//        autoplay: 3500,
+        autoplay: 3500,
         speed: 1500,
         loop: true
     });
     
-    var swiperHeight=$('.swiper-container').height();
     var $arrow=$('.'+currentModule).find('.arrow');
     
     $arrow.addClass('active');
@@ -72,6 +78,68 @@ if (currentModule==="home") {
         }, 900)
     });
 }
+
+$('.burger-menu').on('click',function(event){
+    event.preventDefault();
+    $('.header-nav').toggleClass('show');
+    $barIcon.toggleClass('hidden');
+    $closeIcon.toggleClass('show');
+});
+
+$(window).on('resize', function(event){
+    //console.info($(this).width());
+    if($(this).width()>992){
+        if($('.header-nav').hasClass('show')){
+            $('.header-nav').removeClass('show')
+        }
+
+        if($closeIcon.hasClass('show')){
+            $closeIcon.removeClass('show');
+            $barIcon.removeClass('hidden');
+        }
+    }
+});
+
+var toggleScrollTop=function(value) {
+    if($(window).scrollTop()>=value){
+        $('.scroll-top').show();
+    }else{
+        $('.scroll-top').hide();
+    }
+};
+
+$(window).on('scroll', function(){
+    if(currentModule==="home") {
+        toggleScrollTop(swiperHeight/2);
+    }else {
+        toggleScrollTop(100);
+    }
+});
+
+$('.scroll-top').on("click", function(event){
+    event.preventDefault();
+
+    $('body').animate({
+        scrollTop: 0
+    }, 900)
+});
+
+
+$signInBtn.on('click', function(event){
+    $('.drawer').addClass('active');
+});
+
+$drawerCloseBtn.on('click', function(event){
+    $('.drawer').removeClass('active');
+});
+
+$('.toc-link').on('click', function(event){
+    event.preventDefault();
+    console.info("called");
+    //$('#tocTab').removeClass('disabled');
+    //$('.drawer-tab.tabs').tabs('select_tab', 'tocTab');
+    $('#tocTab').click();
+});
 
 
 
