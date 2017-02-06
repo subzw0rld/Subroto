@@ -6859,8 +6859,6 @@ header {
   font-size: 1.5rem;
   margin-top: 66px;
   margin-top: 6.6rem;
-  padding-top: 20px;
-  padding-top: 2rem;
   min-height: calc(100vh - 136px); }
   .profile .card-panel {
     padding-top: 20px;
@@ -6868,6 +6866,17 @@ header {
     background: rgba(250, 250, 250, 0.75); }
     @media only screen and (max-width: 992px) {
       .profile .card-panel {
+        padding-bottom: 20px;
+        padding-bottom: 2rem; } }
+  .profile .profile-container {
+    background: #FFF;
+    min-height: 670px; }
+    .profile .profile-container:first-child {
+      border-right: 1px solid #e8e8e8; }
+    .profile .profile-container:last-child {
+      border-left: 1px solid #e8e8e8; }
+    @media only screen and (max-width: 992px) {
+      .profile .profile-container {
         padding-bottom: 20px;
         padding-bottom: 2rem; } }
   .profile .profile-icon {
@@ -6895,8 +6904,6 @@ header {
           height: 150px;
           width: 150px; } }
   .profile .user {
-    padding-left: 20px;
-    padding-left: 2rem;
     margin: 10px 0;
     margin: 1rem 0; }
   .profile .edit {
@@ -6962,6 +6969,92 @@ header {
     bottom: 0; }
   .profile .profile-detail {
     padding: 0; }
+  .profile .tab-item {
+    padding: 20px;
+    padding: 2rem; }
+  .profile .activity-list-item {
+    margin-top: 8px;
+    margin-top: 0.8rem;
+    padding: 8px;
+    padding: 0.8rem;
+    background: rgba(245, 245, 245, 0.8);
+    margin-bottom: 0; }
+  .profile .activity-owner {
+    margin-bottom: 20px;
+    margin-bottom: 2rem;
+    display: block;
+    color: #FF6600; }
+    .profile .activity-owner .user-icon {
+      margin-right: 10px;
+      margin-right: 1rem;
+      width: 50px;
+      height: 50px;
+      vertical-align: middle; }
+  .profile .user-info {
+    margin-top: 10px;
+    margin-top: 1rem;
+    border-bottom: 1px solid #e8e8e8;
+    position: relative; }
+    .profile .user-info h4 {
+      padding: 5px;
+      padding: 0.5rem;
+      background: rgba(250, 250, 250, 0.9);
+      color: #FF6600; }
+  .profile .achievement-list {
+    border-bottom: 1px dotted #e8e8e8; }
+  .profile .add-image {
+    margin-bottom: 20px;
+    margin-bottom: 2rem; }
+  .profile .swiper-container {
+    width: 100%;
+    height: 200px;
+    margin: 20px auto; }
+  .profile .swiper-slide {
+    text-align: center;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
+  .profile .swiper-next, .profile .swiper-prev {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: url(../svg/next-grey.svg);
+    z-index: 20; }
+  .profile .swiper-prev {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    left: 5px; }
+  .profile .swiper-button-disabled {
+    opacity: 0.3;
+    cursor: default; }
+  .profile .badge-container img {
+    background-color: transparent;
+    max-height: 200px;
+    width: auto; }
+  .profile .time-spent {
+    padding: 20px;
+    padding: 2rem;
+    font-size: 60px;
+    font-size: 6rem; }
+  .profile .time-spent-alert {
+    color: #e53935; }
 
 .attractions {
   min-height: calc(100vh - 194px); }

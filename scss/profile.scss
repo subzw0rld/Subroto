@@ -1,7 +1,7 @@
 .profile{
     @include rem(font-size,15px);
     @include rem(margin-top,66px);
-    @include rem(padding-top, 20px);
+//    @include rem(padding-top, 20px);
     
     min-height: calc(100vh - 136px);
     
@@ -16,10 +16,29 @@
         }
     }
     
+    .profile-container {
+//        @include rem(padding-top, 20px);
+//        background: rgba(250, 250, 250, 0.9);
+        background: $white;
+        min-height: 670px;
+        
+        &:first-child {
+            border-right: 1px solid #e8e8e8;
+        }
+        
+        &:last-child {
+            border-left: 1px solid #e8e8e8;
+        }
+        
+        @media only screen and (max-width: $screen-desktop) {
+            @include rem(padding-bottom, 20px);
+        }
+    }
+    
     .profile-icon{
         @include rem(font-size, 90px);
-        
         color: $dark-grey;
+        
         
         @media only screen and (min-width: $screen-desktop) {
             @include rem(font-size, 120px);
@@ -46,7 +65,7 @@
     }
     
     .user{
-        @include rem(padding-left, 20px);
+//        @include rem(padding-left, 20px);
         @include rem(margin, 10px 0);
     }
     
@@ -129,5 +148,126 @@
     
     .profile-detail {
         padding: 0;
+    }
+    
+//    .tabs {
+//        margin: 0 -0.75rem;
+//    }
+    
+    .tab-item {
+        @include rem(padding, 20px);
+    }
+    
+    .activity-list-item {
+        @include rem(margin-top, 8px);
+        @include rem(padding, 8px);
+        
+        background: rgba(245, 245, 245, 0.8);
+        margin-bottom: 0;
+    }
+    
+    .activity-owner {
+        @include rem(margin-bottom, 20px);
+        
+        display: block;
+        color: $orange;
+        
+        .user-icon {
+            @include rem(margin-right, 10px);
+            
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+        }
+    }
+    
+    .user-info {
+        @include rem(margin-top, 10px);
+        
+        border-bottom: 1px solid #e8e8e8;
+        position: relative;
+        
+        h4 {
+            @include rem(padding, 5px);
+            
+            background: rgba(250, 250, 250, 0.9);
+            color: $orange;
+        }
+    }
+    
+    .achievement-list {
+        border-bottom: 1px dotted #e8e8e8;
+    }
+    
+    .add-image {
+        @include rem(margin-bottom, 20px);
+    }
+    
+    .swiper-container {
+        width: 100%;
+        height: 200px;
+        margin: 20px auto;
+    }
+    
+    .swiper-slide {
+        text-align: center;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    
+    .swiper-next, .swiper-prev {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+        background: url(../svg/next-grey.svg);
+        z-index: 20;
+    }
+    
+    .swiper-prev {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+        
+        left: 5px;
+        
+    }
+    
+    .swiper-button-disabled {
+        opacity: 0.3;
+        cursor: default;
+    }
+    
+    .badge-container {
+        img {
+            background-color: transparent;
+            max-height: 200px;
+            width: auto;
+        }
+    }
+    
+    .time-spent {
+        @include rem(padding, 20px);
+        @include rem(font-size, 60px);
+    }
+    
+    .time-spent-alert {
+        color: #e53935;
     }
 }

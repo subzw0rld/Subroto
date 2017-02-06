@@ -6,6 +6,7 @@ var currentModule = document.querySelector(".wrapper").className.split(" ")[2];
 var windowHeight = window.innerHeight;
 var headerHeight = $(".semi-transparent-nav").outerHeight();
 var footerHeight = $("footer").outerHeight();
+var swiper;
 var swiperHeight=$('.swiper-container').height();
 
 var cardPosition = "odd";
@@ -47,20 +48,12 @@ var initScroll=function($iElement){
 
 
 if (page.indexOf("gallery")!== -1) {
-    $('.fancybox').fancybox({
-        "transitionIn": "elastic",
-        "transitionOut": "elastic",
-        "easingIn": "easeOutBack",
-        "easingOut": "easeInBack",
-        "scrolling": "no"
-    });
-    
     $('.scrollspy').scrollSpy({scrollOffset: 50});
     initScroll($('.scrollspy-menu'));
 }
 
 if (currentModule==="home") {
-    var swiper = new Swiper('.swiper-container', {
+    swiper = new Swiper('.swiper-container', {
         autoplay: 3500,
         speed: 1500,
         loop: true
@@ -79,6 +72,13 @@ if (currentModule==="home") {
     });
 }
 
+if (currentModule==="profile") {
+    swiper = new Swiper('.swiper-container', {
+        nextButton: '.swiper-next',
+        prevButton: '.swiper-prev'
+    });
+}
+
 $('.burger-menu').on('click',function(event){
     event.preventDefault();
     $('.header-nav').toggleClass('show');
@@ -86,7 +86,7 @@ $('.burger-menu').on('click',function(event){
     $closeIcon.toggleClass('show');
 });
 
-$(window).on('resize', function(event){
+$(window).on('resize load', function(event){
     //console.info($(this).width());
     if($(this).width()>992){
         if($('.header-nav').hasClass('show')){
@@ -98,6 +98,9 @@ $(window).on('resize', function(event){
             $barIcon.removeClass('hidden');
         }
     }
+    
+    $(".profile-container").height($(".user-details").height());
+    console.info($(".user-details").height());
 });
 
 var toggleScrollTop=function(value) {
@@ -139,6 +142,14 @@ $('.toc-link').on('click', function(event){
     //$('#tocTab').removeClass('disabled');
     //$('.drawer-tab.tabs').tabs('select_tab', 'tocTab');
     $('#tocTab').click();
+});
+
+$('.fancybox').fancybox({
+    "transitionIn": "elastic",
+    "transitionOut": "elastic",
+    "easingIn": "easeOutBack",
+    "easingOut": "easeInBack",
+    "scrolling": "no"
 });
 
 

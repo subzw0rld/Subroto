@@ -1,131 +1,277 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Trekoholic | Profile</title>
-        <meta charset="utf-8">
-        <meta name="author" content="Trekoholic">
-        <meta name="description" content="Website for Trekoholic">
+<head>
+    <title>Trekoholic | Profile</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Trekoholic">
+    <meta name="description" content="Website for Trekoholic">
 
-        <!-- Mobile Stuff -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="msapplication-tap-highlight" content="no">
+    <!-- Mobile Stuff -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no">
 
-        <link rel="shortcut icon" type="image/png" href="images/logo3.png">
-        <link href="https://fonts.googleapis.com/css?family=Amiri" rel="stylesheet">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/jquery.fancybox.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
+    <link rel="shortcut icon" type="image/png" href="images/logo3.png">
+    <link href="https://fonts.googleapis.com/css?family=Amiri" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
 
-    <body>
-        <header>
-            <nav class="semi-transparent-nav">
-                <span class="burger-menu">
+<body>
+    <header>
+        <nav class="semi-transparent-nav">
+            <span class="burger-menu">
                     <span class="bar-icon fa fa-bars"></span>
-                    <span class="close-icon fa fa-close"></span>
-                </span>
-                <a href="/" class="logo">
-                    <img class="responsive-img" src="images/logo2.png" alt="Logo">
-                </a>
-                <ul class="header-nav">
-                    <li>
-                        <a href="explorer.html"><i class="fa fa-wpexplorer" aria-hidden="true"></i>Explorer</a>
-                    </li>
-                    <li>
-                        <a href="gallery.html"><i class="fa fa-image" aria-hidden="true"></i>Gallery</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-commenting" aria-hidden="true"></i>TrekTalk</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-globe" aria-hidden="true"></i>Attractions</a>
-                    </li>
-                </ul>
-                <a href="#" class="sign-in btn-large waves-effect waves-orange"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a>
-            </nav>
-        </header>
-        <section class="row wrapper profile">
-            <div class="col s12 user-details">
-                <div class="col s5 card-panel hoverable">
-                    <div class="col s5">
-                        <span class="fa fa-user-o profile-icon"></span>
-                        <div class="user">Subroto <a href="#" class="edit"><i class="fa fa-edit"></i>Edit</a></div>
-                    </div>
-                    <div class="col s7 user-achievement">
-                        <div class="achievements">
-                            <h4>Endorsements</h4>
-                            <span>0</span>
-                        </div>
-                        <div class="achievements">
-                            <h4>Trekpoints</h4>
-                            <span>0</span>
-                        </div>
-                        <div class="achievements">
-                            <h4>Blogs</h4>
-                            <span>0</span>
-                        </div>
-                    </div>
+            <span class="close-icon fa fa-close"></span>
+            </span>
+            <a href="/" class="logo">
+                <img class="responsive-img" src="images/logo2.png" alt="Logo">
+            </a>
+            <ul class="header-nav">
+                <li>
+                    <a href="explorer.html"><i class="fa fa-wpexplorer" aria-hidden="true"></i>Explorer</a>
+                </li>
+                <li>
+                    <a href="gallery.html"><i class="fa fa-image" aria-hidden="true"></i>Gallery</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-commenting" aria-hidden="true"></i>TrekTalk</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-globe" aria-hidden="true"></i>Attractions</a>
+                </li>
+            </ul>
+            <a href="#" class="sign-in btn-large waves-effect waves-orange"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a>
+        </nav>
+    </header>
+    <section class="row wrapper profile">
+        <div class="col s12 user-details">
+            <div class="col s3 profile-container center-align">
+                <div class="user-info">
+                    <span class="fa fa-user-o profile-icon"></span>
+                    <div class="user">Subroto <a href="#" class="edit"><i class="fa fa-edit"></i>Edit</a></div>
                 </div>
-                <div class="col s6 offset-s1 card-panel hoverable points">
-                   <div class="col s4">
-                       <h4>Time since last activity</h4>
-                       <span class="fa fa-calendar calendar"></span>57 days
-                   </div>
-                    <div class="col s8 badge-box">
-                        <h4 class="badge-title">Earn Badges</h4>
-                        <div class="badges"></div>
-                        <div class="badge-footer">Badges</div>
-                   </div>
+                <div class="user-info left-align">
+                    <h4>Achievements</h4>
+                    <ul>
+                        <li class="achievement-list clearfix">
+                            <div class="left">Endorsements</div>
+                            <div class="right">42</div>
+                        </li>
+                        <li class="achievement-list clearfix">
+                            <div class="left">Trekpoints</div>
+                            <div class="right">1355</div>
+                        </li>
+                        <li class="achievement-list clearfix">
+                            <div class="left">Blogs</div>
+                            <div class="right">2</div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col s12 card-panel hoverable profile-detail">
-                    <ul class="tabs">
-                        <li class="col s2 tab">
-                            <a href="#activities">Activities</a>
-                        </li>
-                        <li class="col s2 tab">
-                            <a href="#about">About Me</a>
-                        </li>
-                        <li class="col s2 tab">
-                            <a href="#articles">Articles</a>
-                        </li>
-                        <li class="col s2 tab">
-                            <a href="#images">Images</a>
-                        </li>
+                <div class="user-info left-align">
+                    <h4>Badges</h4>
+                    <div class="swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <div class="badge-container">
+                                    <img src="images/badges/1.png">
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="badge-container">
+                                    <img src="images/badges/4.png">
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="badge-container">
+                                    <img src="images/badges/5.png">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-next"></div>
+                    <div class="swiper-prev"></div>
+                </div>
+            </div>
+            <div class="col s6 profile-container">
+                <ul class="tabs row">
+                    <li class="col s2 tab">
+                        <a href="#activities">Activities</a>
+                    </li>
+                    <li class="col s2 tab">
+                        <a href="#about">About Me</a>
+                    </li>
+                    <li class="col s2 tab">
+                        <a href="#articles">Articles</a>
+                    </li>
+                    <li class="col s2 tab">
+                        <a href="#images">Images</a>
+                    </li>
+                    <!--
                         <li class="col s2 tab">
                             <a href="#upload">Uploaded Images</a>
                         </li>
+-->
+                </ul>
+                <div id="activities" class="tab-item col s12">
+                    <ul class="activity-list">
+                        <li class="activity-list-item row">
+                            <div class="image-item col s4">
+                                <img src="images/x_thumb_BackpackingSecrets.jpg">
+                            </div>
+                            <div class="col s8">
+                                <a href="profile?user=88" class="activity-owner"><img class="user-icon circle" src="images/thumb_Sleep-eat-play-repeat.jpg">Mountain Dogs</a>
+                                <h5>
+                                    <a href="article/read?article=138">Everything one needs to know about tents : Part 2</a>
+                                </h5>
+                            </div>
+                        </li>
+                        <li class="activity-list-item row">
+                            <div class="image-item col s4">
+                                <img src="images/x_thumb_Nohkalikai Falls.jpg">
+                            </div>
+                            <div class="col s8">
+                                <a href="profile?user=88" class="activity-owner"><img class="user-icon circle" src="images/thumb_finall.jpg">Shwetank Upadhyay</a>
+                                <h5>
+                                    <a href="article/read?article=138">5 waterfalls in India you must see</a>
+                                </h5>
+                            </div>
+                        </li>
+                        <li class="activity-list-item row">
+                            <div class="image-item col s4">
+                                <img src="images/thumb_20081008_173600_HangJenny_.jpg">
+                            </div>
+                            <div class="col s8">
+                                <a href="profile?user=88" class="activity-owner"><img class="user-icon circle" src="images/thumb_finall.jpg">Shwetank Upadhyay</a>
+                                <h5>
+                                    <a href="article/read?article=138">5 reasons you should be travelling</a>
+                                </h5>
+                            </div>
+                        </li>
+                        <li class="activity-list-item row">
+                            <div class="image-item col s4">
+                                <img src="images/thumb_hiking.jpg">
+                            </div>
+                            <div class="col s8">
+                                <a href="profile?user=88" class="activity-owner"><img class="user-icon circle" src="images/thumb_finall.jpg">Shwetank Upadhyay</a>
+                                <h5>
+                                    <a href="article/read?article=138">5 Ways to be a responsible hiker</a>
+                                </h5>
+                            </div>
+                        </li>
                     </ul>
-                    <div id="activities" class="col s12">Test 1</div>
-                    <div id="about" class="col s12">Test 2</div>
-                    <div id="articles" class="col s12">Test 3</div>
-                    <div id="images" class="col s12">Test 4</div>
-                    <div id="upload" class="col s12">Test 5</div>
+                </div>
+                <div id="about" class="tab-item col s12">Test 2</div>
+                <div id="articles" class="tab-item col s12">
+                    <ul class="activity-list">
+                        <li class="activity-list-item row">
+                            <div class="col s12">
+                                <h5 class="center-align">
+                                    <a href="article.html">Write an Article</a>
+                                </h5>
+                            </div>
+                        </li>
+                        <li class="activity-list-item row">
+                            <div class="image-item col s4">
+                                <img src="images/x_thumb_Nohkalikai Falls.jpg">
+                            </div>
+                            <div class="col s8">
+                                <a href="profile?user=88" class="activity-owner"><img class="user-icon circle" src="images/thumb_finall.jpg">Shwetank Upadhyay</a>
+                                <h5>
+                                    <a href="article/read?article=138">5 waterfalls in India you must see</a>
+                                </h5>
+                            </div>
+                        </li>
+                        <li class="activity-list-item row">
+                            <div class="image-item col s4">
+                                <img src="images/thumb_20081008_173600_HangJenny_.jpg">
+                            </div>
+                            <div class="col s8">
+                                <a href="profile?user=88" class="activity-owner"><img class="user-icon circle" src="images/thumb_finall.jpg">Shwetank Upadhyay</a>
+                                <h5>
+                                    <a href="article/read?article=138">5 reasons you should be travelling</a>
+                                </h5>
+                            </div>
+                        </li>
+                        <li class="activity-list-item row">
+                            <div class="image-item col s4">
+                                <img src="images/thumb_hiking.jpg">
+                            </div>
+                            <div class="col s8">
+                                <a href="profile?user=88" class="activity-owner"><img class="user-icon circle" src="images/thumb_finall.jpg">Shwetank Upadhyay</a>
+                                <h5>
+                                    <a href="article/read?article=138">5 Ways to be a responsible hiker</a>
+                                </h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="images" class="tab-item col s12">
+                    <ul class="row">
+                        <li class="add-image activity-list-item col s12">
+                            <h5 class="center-align">
+                                <a href="article.html">Add Images</a>
+                            </h5>
+                        </li>
+                        <li class="col m4 s12">
+                            <a href="images/24.jpg" class="fancybox" title="Some Mountain">
+                                <img src="images/24.jpg">
+                            </a>
+                        </li>
+                        <li class="col m4 s12">
+                            <a href="images/amongMountains.jpg" class="fancybox" title="Some road through mountains">
+                                <img src="images/amongMountains.jpg">
+                            </a>
+                        </li>
+                        <li class="col m4 s12">
+                            <a href="images/norway-bucketlist-wcth22.jpg" class="fancybox" title="Norway">
+                                <img src="images/norway-bucketlist-wcth22.jpg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--                    <div id="upload" class="col s12">Test 5</div>-->
+            </div>
+            <div class="col s3 profile-container">
+                <div class="user-info left-align">
+                    <h4>Activities</h4>
+                    <div class="act-msg">Time since last activity</div>
+                    <div class="time-spent center-align time-spent-alert">561 days</div>
+                </div>
+                <div class="user-info center-align">
+                    <div class="msg time-spent-alert">
+                        One's destination is never a place, but a new way of seeing things
+                    </div>
                 </div>
             </div>
-        </section>
-        <footer class="row">
-            <div class="container">
-                <a href="https://www.facebook.com/" class="social">
-                    <i class="fa fa-facebook"></i>
-                </a>
-                <a href="https://www.facebook.com/" class="social">
-                    <i class="fa fa-twitter"></i>
-                </a>
-                <a href="https://www.facebook.com/" class="social">
-                    <i class="fa fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/" class="social">
-                    <i class="fa fa-youtube-play"></i>
-                </a>
-            </div>
-        </footer>
-        <script type="application/javascript" src="js/vendor/jquery.js"></script>
-        <script src="js/vendor/jquery.easing.pack.js"></script>
-        <script type="application/javascript" src="js/vendor/materialize.js"></script>
-        <script type="text/javascript" src="js/vendor/jquery.fancybox.js"></script>
-        <script type="application/javascript" src="js/main.js"></script>
-    </body>
+        </div>
+
+    </section>
+    <footer class="row">
+        <div class="container">
+            <a href="https://www.facebook.com/" class="social">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://www.facebook.com/" class="social">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/" class="social">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/" class="social">
+                <i class="fa fa-youtube-play"></i>
+            </a>
+        </div>
+    </footer>
+    <script type="application/javascript" src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/jquery.easing.pack.js"></script>
+    <script src="js/vendor/swiper.js"></script>
+    <script type="application/javascript" src="js/vendor/materialize.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.fancybox.js"></script>
+    <script type="application/javascript" src="js/main.js"></script>
+</body>
 
 </html>
